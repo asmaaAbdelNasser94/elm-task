@@ -1,0 +1,14 @@
+{
+  "language": {
+    "label": "Language",
+    "ar": "العربية",
+    "en": "English"
+  },
+  "setup": {
+    "eyebrow": "Project setup",
+    "title": "Elm Portal",
+    "description": "Bootstrap and PrimeNG are ready. The layout direction follows the selected language.",
+    "primaryAction": "Primary action",
+    "bootstrapButton": "Bootstrap button"
+  }
+}

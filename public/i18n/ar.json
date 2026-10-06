@@ -1,0 +1,14 @@
+{
+  "language": {
+    "label": "اللغة",
+    "ar": "العربية",
+    "en": "English"
+  },
+  "setup": {
+    "eyebrow": "إعداد المشروع",
+    "title": "بوابة علم",
+    "description": "Bootstrap و PrimeNG جاهزان، والاتجاه يتبع اللغة المختارة.",
+    "primaryAction": "إجراء رئيسي",
+    "bootstrapButton": "زر Bootstrap"
+  }
+}
