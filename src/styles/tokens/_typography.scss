@@ -1,0 +1,31 @@
+:root {
+  // Family
+  --font-family-base: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+
+  // Weights
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  // Display (1rem = 16px)
+  --font-size-display-xl: 3.75rem;   // 60px
+  --line-height-display-xl: 4.5rem;  // 72px
+  --font-size-display-lg: 3rem;      // 48px
+  --line-height-display-lg: 3.75rem; // 60px
+  --font-size-display-sm: 1.875rem;  // 30px
+  --line-height-display-sm: 2.375rem; // 38px
+  --letter-spacing-display: -0.125rem; // -2px
+
+  // Text
+  --font-size-text-xl: 1.25rem;    // 20px
+  --line-height-text-xl: 1.875rem; // 30px
+  --font-size-text-lg: 1.125rem;   // 18px
+  --line-height-text-lg: 1.75rem;  // 28px
+  --font-size-text-md: 1rem;       // 16px
+  --line-height-text-md: 1.5rem;   // 24px
+  --font-size-text-sm: 0.875rem;   // 14px
+  --line-height-text-sm: 1.25rem;  // 20px
+  --font-size-text-xs: 0.75rem;    // 12px
+  --line-height-text-xs: 1.125rem; // 18px
+}

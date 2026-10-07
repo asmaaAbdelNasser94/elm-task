@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.p-button {
+  --p-button-primary-background: #{$color-primary};
+  --p-button-primary-border-color: #{$color-primary};
+  --p-button-primary-color: #{$color-text-white};
+  --p-button-primary-hover-background: #{$color-primary-dark};
+  --p-button-primary-hover-border-color: #{$color-primary-dark};
+  --p-button-primary-hover-color: #{$color-text-white};
+  --p-button-primary-active-background: #{$color-primary-dark};
+  --p-button-primary-active-border-color: #{$color-primary-dark};
+  --p-button-primary-active-color: #{$color-text-white};
+
+  --p-button-outlined-primary-color: #{$color-primary};
+  --p-button-outlined-primary-border-color: #{$color-primary};
+  --p-button-outlined-primary-hover-background: #{$color-primary};
+  --p-button-outlined-primary-hover-border-color: #{$color-primary};
+  --p-button-outlined-primary-hover-color: #{$color-text-white};
+  --p-button-outlined-primary-active-background: #{$color-primary-dark};
+  --p-button-outlined-primary-active-border-color: #{$color-primary-dark};
+  --p-button-outlined-primary-active-color: #{$color-text-white};
+
+  font-family: $font-family-base;
+  font-size: $font-size-text-md;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-text-md;
+  gap: $spacing-md;
+}

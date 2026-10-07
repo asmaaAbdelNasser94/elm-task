@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+// Drop `name.svg` in `public/icons`, then add `name` to this list.
+// Usage: class "elm name", or a PrimeNG icon value of "elm name".
+$icons: (
+);
+
+.elm {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+
+  &.white-icon {
+    background-color: $color-icon-white;
+  }
+
+  @each $name in $icons {
+    &.#{$name} {
+      -webkit-mask: url('/icons/#{$name}.svg') no-repeat 50% 50%;
+      mask: url('/icons/#{$name}.svg') no-repeat 50% 50%;
+    }
+  }
+}

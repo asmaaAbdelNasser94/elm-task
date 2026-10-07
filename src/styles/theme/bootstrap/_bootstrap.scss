@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+:root {
+  --bs-primary: #{$color-primary};
+  // Bootstrap needs the bare RGB channels of --color-primary-600.
+  --bs-primary-rgb: 27, 131, 84;
+  --bs-link-color: #{$color-primary};
+  --bs-link-color-rgb: 27, 131, 84;
+  --bs-link-hover-color: #{$color-primary-dark};
+  --bs-focus-ring-color: rgba(var(--bs-primary-rgb), 0.25);
+  --bs-body-font-family: #{$font-family-base};
+  --bs-body-color: #{$color-text-primary};
+  --bs-body-bg: #{$color-bg-primary};
+  --bs-secondary-color: #{$color-text-secondary};
+  --bs-border-color: #{$color-border-default};
+  --bs-border-width: #{$border-width};
+  --bs-border-radius: #{$radius-md};
+}
+
+.btn-primary {
+  --bs-btn-color: #{$color-text-white};
+  --bs-btn-bg: #{$color-primary};
+  --bs-btn-border-color: #{$color-primary};
+  --bs-btn-hover-color: #{$color-text-white};
+  --bs-btn-hover-bg: #{$color-primary-dark};
+  --bs-btn-hover-border-color: #{$color-primary-dark};
+  --bs-btn-active-color: #{$color-text-white};
+  --bs-btn-active-bg: #{$color-primary-dark};
+  --bs-btn-active-border-color: #{$color-primary-dark};
+  --bs-btn-disabled-bg: #{$color-primary};
+  --bs-btn-disabled-border-color: #{$color-primary};
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #{$color-primary};
+  --bs-btn-border-color: #{$color-primary};
+  --bs-btn-hover-color: #{$color-text-white};
+  --bs-btn-hover-bg: #{$color-primary};
+  --bs-btn-hover-border-color: #{$color-primary};
+  --bs-btn-active-color: #{$color-text-white};
+  --bs-btn-active-bg: #{$color-primary-dark};
+  --bs-btn-active-border-color: #{$color-primary-dark};
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}

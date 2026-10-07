@@ -1,0 +1,92 @@
+:root {
+  // ==========================================
+  // Primitives (raw Figma values)
+  // ==========================================
+
+  // Primary (SA green)
+  --color-primary-25: #f3fcf6;
+  --color-primary-600: #1b8354;
+  --color-primary-800: #14573a;
+  --color-primary-900: #074d31;
+
+  // Neutral
+  --color-neutral-0: #ffffff;
+  --color-neutral-25: #f9fafb;
+  --color-neutral-50: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d2d6db;
+  --color-neutral-400: #9da4ae;
+  --color-neutral-500: #6c737f;
+  --color-neutral-700: #384250;
+  --color-neutral-800: #1f2a37;
+  --color-neutral-950: #161616;
+  --color-black: #000000;
+
+  // Success
+  --color-success-50: #ecfdf3;
+  --color-success-200: #abefc6;
+  --color-success-700: #067647;
+  --color-success-800: #085d3a;
+
+  // Info
+  --color-info-50: #eff8ff;
+  --color-info-200: #b2ddff;
+  --color-info-800: #1849a9;
+
+  // Error
+  --color-error-700: #b42318;
+
+  // ==========================================
+  // Semantic
+  // ==========================================
+
+  // Brand
+  --color-primary: var(--color-primary-600);
+  --color-primary-dark: var(--color-primary-800);
+  --color-sa-flag: var(--color-primary-900);
+
+  // Status
+  --color-success: var(--color-success-700);
+  --color-info: var(--color-info-800);
+  --color-error: var(--color-error-700);
+
+  // Text
+  --color-text-primary: var(--color-neutral-950);
+  --color-text-display: var(--color-neutral-800);
+  --color-text-paragraph: var(--color-neutral-700);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-disabled: var(--color-neutral-400);
+  --color-text-white: var(--color-neutral-0);
+  --color-text-success: var(--color-success-800);
+  --color-text-info: var(--color-info-800);
+  --color-text-error: var(--color-error-700);
+
+  // Icons
+  --color-icon-default: var(--color-neutral-950);
+  --color-icon-neutral: var(--color-neutral-700);
+  --color-icon-disabled: var(--color-neutral-400);
+  --color-icon-white: var(--color-neutral-0);
+  --color-icon-error: var(--color-error-700);
+
+  // Backgrounds
+  --color-bg-primary: var(--color-neutral-25);
+  --color-bg-surface: var(--color-neutral-0);
+  --color-bg-neutral: var(--color-neutral-50);
+  --color-bg-neutral-200: var(--color-neutral-200);
+  --color-bg-neutral-400: var(--color-neutral-400);
+  --color-bg-brand-light: var(--color-primary-25);
+  --color-bg-success: var(--color-success-50);
+  --color-bg-info: var(--color-info-50);
+
+  // Borders
+  --color-border-default: var(--color-neutral-300);
+  --color-border-secondary: var(--color-neutral-200);
+  --color-border-primary: var(--color-primary-600);
+  --color-border-field: var(--color-neutral-400);
+  --color-border-disabled: var(--color-neutral-300);
+  --color-border-error: var(--color-error-700);
+  --color-border-success: var(--color-success-200);
+  --color-border-info: var(--color-info-200);
+  --color-border-white: var(--color-neutral-0);
+  --color-border-oncolor: rgb(255 255 255 / 30%);
+}

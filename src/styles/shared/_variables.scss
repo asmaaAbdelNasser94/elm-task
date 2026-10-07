@@ -1,0 +1,121 @@
+
+// Brand
+$color-primary-25: var(--color-primary-25);
+$color-primary-600: var(--color-primary-600);
+$color-primary-800: var(--color-primary-800);
+$color-primary-900: var(--color-primary-900);
+$color-primary: var(--color-primary);
+$color-primary-dark: var(--color-primary-dark);
+$color-sa-flag: var(--color-sa-flag);
+
+// Neutral
+$color-neutral-0: var(--color-neutral-0);
+$color-neutral-25: var(--color-neutral-25);
+$color-neutral-50: var(--color-neutral-50);
+$color-neutral-200: var(--color-neutral-200);
+$color-neutral-300: var(--color-neutral-300);
+$color-neutral-400: var(--color-neutral-400);
+$color-neutral-500: var(--color-neutral-500);
+$color-neutral-700: var(--color-neutral-700);
+$color-neutral-800: var(--color-neutral-800);
+$color-neutral-950: var(--color-neutral-950);
+$color-black: var(--color-black);
+
+// Status
+$color-success-50: var(--color-success-50);
+$color-success-200: var(--color-success-200);
+$color-success-700: var(--color-success-700);
+$color-success-800: var(--color-success-800);
+$color-success: var(--color-success);
+
+$color-info-50: var(--color-info-50);
+$color-info-200: var(--color-info-200);
+$color-info-800: var(--color-info-800);
+$color-info: var(--color-info);
+
+$color-error-700: var(--color-error-700);
+$color-error: var(--color-error);
+
+// Text
+$color-text-primary: var(--color-text-primary);
+$color-text-display: var(--color-text-display);
+$color-text-paragraph: var(--color-text-paragraph);
+$color-text-secondary: var(--color-text-secondary);
+$color-text-disabled: var(--color-text-disabled);
+$color-text-white: var(--color-text-white);
+$color-text-success: var(--color-text-success);
+$color-text-info: var(--color-text-info);
+$color-text-error: var(--color-text-error);
+
+// Icons
+$color-icon-default: var(--color-icon-default);
+$color-icon-neutral: var(--color-icon-neutral);
+$color-icon-disabled: var(--color-icon-disabled);
+$color-icon-white: var(--color-icon-white);
+$color-icon-error: var(--color-icon-error);
+
+// Backgrounds
+$color-bg-primary: var(--color-bg-primary);
+$color-bg-surface: var(--color-bg-surface);
+$color-bg-neutral: var(--color-bg-neutral);
+$color-bg-neutral-200: var(--color-bg-neutral-200);
+$color-bg-neutral-400: var(--color-bg-neutral-400);
+$color-bg-brand-light: var(--color-bg-brand-light);
+$color-bg-success: var(--color-bg-success);
+$color-bg-info: var(--color-bg-info);
+
+// Borders
+$color-border-default: var(--color-border-default);
+$color-border-secondary: var(--color-border-secondary);
+$color-border-primary: var(--color-border-primary);
+$color-border-field: var(--color-border-field);
+$color-border-disabled: var(--color-border-disabled);
+$color-border-error: var(--color-border-error);
+$color-border-success: var(--color-border-success);
+$color-border-info: var(--color-border-info);
+$color-border-white: var(--color-border-white);
+$color-border-oncolor: var(--color-border-oncolor);
+$border-width: var(--border-width);
+
+// Radius
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+$radius-full: var(--radius-full);
+
+// Typography
+$font-family-base: var(--font-family-base);
+$font-weight-regular: var(--font-weight-regular);
+$font-weight-medium: var(--font-weight-medium);
+$font-weight-semibold: var(--font-weight-semibold);
+$font-weight-bold: var(--font-weight-bold);
+
+$font-size-display-xl: var(--font-size-display-xl);
+$line-height-display-xl: var(--line-height-display-xl);
+$font-size-display-lg: var(--font-size-display-lg);
+$line-height-display-lg: var(--line-height-display-lg);
+$font-size-display-sm: var(--font-size-display-sm);
+$line-height-display-sm: var(--line-height-display-sm);
+$letter-spacing-display: var(--letter-spacing-display);
+
+$font-size-text-xl: var(--font-size-text-xl);
+$line-height-text-xl: var(--line-height-text-xl);
+$font-size-text-lg: var(--font-size-text-lg);
+$line-height-text-lg: var(--line-height-text-lg);
+$font-size-text-md: var(--font-size-text-md);
+$line-height-text-md: var(--line-height-text-md);
+$font-size-text-sm: var(--font-size-text-sm);
+$line-height-text-sm: var(--line-height-text-sm);
+$font-size-text-xs: var(--font-size-text-xs);
+$line-height-text-xs: var(--line-height-text-xs);
+
+// Spacing
+$spacing-xxs: var(--spacing-xxs);
+$spacing-xs: var(--spacing-xs);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
+$spacing-3xl: var(--spacing-3xl);
+$spacing-4xl: var(--spacing-4xl);
+$spacing-5xl: var(--spacing-5xl);
+$spacing-8xl: var(--spacing-8xl);

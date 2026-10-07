@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/tokens/css3-variables' as *;
+@use 'variables' as *;
+@use 'styles/icons';
+@use 'styles/theme/bootstrap/bootstrap';
+@use 'styles/theme/prime-custom';
+
+@layer bootstrap, primeng;
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: $font-family-base;
+  color: $color-text-primary;
+  background: $color-bg-primary;
+}
