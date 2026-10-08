@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Button } from 'primeng/button';
 import { Tag } from 'primeng/tag';
@@ -28,6 +29,8 @@ import { serviceDetailBreadcrumb, serviceDetailTags } from '../../data/service-d
   styleUrl: './service-details-page-container.component.scss',
 })
 export class ServiceDetailsPageContainerComponent {
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
   protected readonly breadcrumb = serviceDetailBreadcrumb;
   protected readonly tags = serviceDetailTags;
   protected readonly relatedServices: ServiceCard[] = Array.from({ length: 8 }, (_, id) => ({
@@ -41,4 +44,11 @@ export class ServiceDetailsPageContainerComponent {
     primaryActionKey: '_Services.card.primaryAction',
     secondaryActionKey: '_Services.card.secondaryAction',
   }));
+
+  protected startService(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    void this.router.navigate(['/services/start-service'], {
+      queryParams: id ? { serviceId: id } : undefined,
+    });
+  }
 }

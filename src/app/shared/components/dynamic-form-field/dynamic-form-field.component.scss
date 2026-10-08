@@ -1,0 +1,97 @@
+@use 'variables' as *;
+
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.elm-dynamic-form-field {
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $spacing-xs;
+    margin-block-end: $spacing-md;
+
+    label {
+      margin: 0;
+      color: $color-text-primary;
+      font-size: $font-size-text-sm;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-text-sm;
+    }
+  }
+
+  &__required {
+    color: $color-text-error;
+    font-size: $font-size-text-sm;
+    line-height: 1;
+  }
+
+  &__hint {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $spacing-xs;
+    margin: $spacing-md 0 0;
+    color: $color-text-secondary;
+    font-size: $font-size-text-xs;
+    line-height: $line-height-text-xs;
+
+    .pi {
+      font-size: 0.875rem;
+    }
+
+    &--error {
+      color: $color-text-error;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-inputtext,
+  .p-textarea {
+    width: 100%;
+    border-color: $color-border-default;
+    border-radius: $radius-sm;
+    color: $color-text-primary;
+    font-size: $font-size-text-md;
+    box-shadow: none;
+
+    &::placeholder {
+      color: $color-text-disabled;
+    }
+
+    &:disabled {
+      background: $color-neutral-50;
+      color: $color-text-disabled;
+    }
+
+    &.p-invalid {
+      border-color: $color-border-error;
+    }
+  }
+
+  .p-inputtext {
+    height: 2.5rem;
+  }
+
+  .p-iconfield {
+    width: 100%;
+
+    .p-inputicon {
+      inset-inline-start: auto !important;
+      inset-inline-end: 0.75rem !important;
+    }
+
+    .p-inputtext {
+      padding-inline-end: 2.5rem;
+    }
+  }
+
+  .p-inputicon .elm {
+    width: 1rem;
+    height: 1rem;
+    background-color: $color-text-secondary;
+  }
+}

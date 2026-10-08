@@ -10,15 +10,7 @@
     margin-top: $spacing-4xl;
 
     .stat-item {
-      @include respond-to-large {
-        width: 14rem;
-      }
-
-      @include respond-to-Xlarge {
-        width: 14rem;
-      }
-
-      @include respond-to-2Xlarge {
+      @include respond-from-large {
         width: 14rem;
       }
     }

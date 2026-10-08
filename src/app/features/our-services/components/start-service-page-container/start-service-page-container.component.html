@@ -1,3 +1,60 @@
-<section class="elm-start-service-page-container">
-  <h1>{{ startService.titleKey | translate }}</h1>
+<section class="elm-start-service">
+  <elm-breadcrumb [items]="breadcrumb" />
+
+  <h1 class="elm-start-service__title">{{ '_StartService.form.title' | translate }}</h1>
+  <p class="elm-start-service__description">{{ '_StartService.form.description' | translate }}</p>
+
+  <div class="elm-start-service__layout">
+    <div class="elm-start-service__form">
+      @switch (activeStep()) {
+      @case (1) {
+      <elm-first-step-form />
+      }
+      @case (2) {
+      <elm-second-step-form />
+      }
+      @case (3) {
+      <elm-third-step-form />
+      }
+      }
+
+      <div class="elm-start-service__actions">
+        @if (activeStep() > 1) {
+        <p-button type="button" severity="secondary" [outlined]="true" [label]="'_StartService.form.back' | translate"
+          (onClick)="back()" />
+        }
+        <p-button type="button"
+          [label]="(activeStep() === steps.length ? '_StartService.form.send' : '_StartService.form.next') | translate"
+          (onClick)="next()" />
+      </div>
+    </div>
+
+    <p-stepper class="elm-start-service__wizard" [value]="activeStep()" [linear]="true"
+      (valueChange)="onStepChange($event)">
+      <p-step-list>
+        @for (step of steps; track step.value) {
+        <p-step [value]="step.value">
+          <ng-template #content let-activateCallback="activateCallback">
+            <button type="button" class="elm-start-service__step" (click)="activateCallback()">
+              <span class="elm-start-service__marker"
+                [class.elm-start-service__marker--done]="step.value < activeStep()"
+                [class.elm-start-service__marker--current]="step.value === activeStep()">
+                @if (step.value < activeStep()) { <i class="elm check" aria-hidden="true"></i>
+                  } @else {
+                  {{ step.value }}
+                  }
+              </span>
+              <span class="elm-start-service__copy">
+                <span class="elm-start-service__step-title">{{ step.titleKey | translate }}</span>
+                <span class="elm-start-service__step-text">{{ step.descriptionKey | translate }}</span>
+              </span>
+            </button>
+          </ng-template>
+        </p-step>
+        }
+      </p-step-list>
+    </p-stepper>
+  </div>
 </section>
+
+<elm-page-rate [yesPercent]="60" [responseCount]="2843" />

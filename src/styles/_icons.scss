@@ -7,7 +7,6 @@ $icons: (
   'lang',
   'user',
   'chevron-down',
-  'chevron-up',
   'chevron-left',
   'chevron-right',
   'plus',
@@ -25,7 +24,6 @@ $icons: (
   'clock',
   'computer-phone-sync',
   'money',
-  'card',
   'phone',
   'mail',
   'link',
@@ -40,10 +38,6 @@ $icons: (
   background-color: $color-text-primary;
   -webkit-mask-size: contain !important;
   mask-size: contain !important;
-
-  &.white-icon {
-    background-color: $color-icon-white;
-  }
 
   &.primary-icon {
     background-color: $color-primary;

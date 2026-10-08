@@ -1,23 +1,9 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin rate-desktop {
-  @include respond-to-large {
-    @content;
-  }
-
-  @include respond-to-Xlarge {
-    @content;
-  }
-
-  @include respond-to-2Xlarge {
-    @content;
-  }
-}
-
 :host {
   display: block;
-  border-block-end: .0625rem solid $color-border-secondary;
+  border-block-end: $border-width solid $color-border-secondary;
 }
 
 .elm-page-rate {
@@ -29,7 +15,7 @@
   margin-inline: auto;
   padding: $spacing-xl;
 
-  @include rate-desktop {
+  @include respond-from-large {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

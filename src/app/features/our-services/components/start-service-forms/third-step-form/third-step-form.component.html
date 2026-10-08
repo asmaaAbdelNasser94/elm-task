@@ -1,0 +1,9 @@
+<p class="elm-step-form__required">
+  <span aria-hidden="true">*</span>
+  <span>{{ '_StartService.form.requiredNote' | translate }}</span>
+</p>
+<div class="elm-step-form__fields">
+  @for (field of fields(); track field.formControlName) {
+  <elm-dynamic-form-field [field]="field" [form]="form" />
+  }
+</div>

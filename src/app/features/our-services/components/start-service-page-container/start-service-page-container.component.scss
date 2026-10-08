@@ -1,26 +1,172 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin content-mobile {
-  @include respond-to-Xsmall {
-    @content;
+:host {
+  display: block;
+}
+
+.elm-start-service {
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  padding: $spacing-5xl 0 $spacing-4xl;
+
+  @include respond-to-mobile {
+    padding-inline: $spacing-xl;
   }
 
-  @include respond-to-small {
-    @content;
+  &__title {
+    margin: $spacing-3xl 0 $spacing-xl;
+    color: $color-text-primary;
+    font-size: $font-size-display-sm;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-display-sm;
+    text-align: start;
   }
 
-  @include respond-to-medium {
-    @content;
+  &__description {
+    max-width: 46rem;
+    margin: 0 0 $spacing-3xl;
+    color: $color-text-paragraph;
+    font-size: $font-size-text-md;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-text-md;
+    text-align: start;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 26rem;
+    column-gap: $spacing-5xl;
+    align-items: start;
+  }
+
+  &__form {
+    min-width: 0;
+  }
+
+  &__wizard {
+    width: 26rem;
+    max-width: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-md;
+    margin-top: $spacing-4xl;
+  }
+
+  &__step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-md;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: start;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      inset-inline-start: 0.9375rem;
+      top: 2rem;
+      bottom: -2.5rem;
+      width: 0.125rem;
+      background: $color-primary;
+    }
+  }
+
+  &__marker {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 0.125rem solid $color-neutral-300;
+    border-radius: $radius-full;
+    background: $color-bg-surface;
+    color: $color-text-disabled;
+    font-size: $font-size-text-sm;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+
+    &--current {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+
+    &--done {
+      border-color: $color-primary;
+      background: $color-primary;
+      color: $color-text-white;
+
+      .elm {
+        width: 1rem;
+        height: 1rem;
+        background-color: $color-text-white;
+      }
+    }
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xxs;
+    min-width: 0;
+  }
+
+  &__step-title {
+    color: $color-text-primary;
+    font-size: $font-size-text-md;
+    line-height: $line-height-text-md;
+  }
+
+  &__step-text {
+    color: $color-neutral-700;
+    font-size: $font-size-text-sm;
+    line-height: $line-height-text-sm;
   }
 }
 
-:host {
-  display: block;
-  width: min(100%, 80rem);
-  margin-inline: auto;
-
-  @include content-mobile {
-    padding-inline: $spacing-xl;
+:host ::ng-deep {
+  .p-steplist {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: $spacing-4xl;
+    padding: $spacing-3xl $spacing-xl;
+    background: $color-neutral-25;
+    border-radius: $radius-lg;
   }
+
+  .p-step {
+    flex: none;
+    width: 100%;
+  }
+
+  .p-step:last-child .elm-start-service__step::before {
+    display: none;
+  }
+
+  .p-stepper-separator {
+    display: none;
+  }
+
+  @include respond-to-mobile {
+    .elm-start-service__layout {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+elm-page-rate {
+  border-block-start: $border-width solid $color-border-secondary;
 }

@@ -1,20 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin news-desktop {
-  @include respond-to-large {
-    @content;
-  }
-
-  @include respond-to-Xlarge {
-    @content;
-  }
-
-  @include respond-to-2Xlarge {
-    @content;
-  }
-}
-
 :host {
   display: block;
 }
@@ -126,7 +112,7 @@
     width: 100%;
     max-width: 100%;
 
-    @include news-desktop {
+    @include respond-from-large {
       flex-basis: 33.333% !important;
       width: 33.333%;
       max-width: 33.333%;
@@ -135,7 +121,7 @@
   }
 
   .p-carousel-item-list {
-    @include news-desktop {
+    @include respond-from-large {
       margin-inline: calc(#{$spacing-3xl} / -2);
     }
   }
@@ -147,7 +133,7 @@
   .p-carousel-indicator-list,
   .p-carousel-prev-button,
   .p-carousel-next-button {
-    @include news-desktop {
+    @include respond-from-large {
       display: none;
     }
   }

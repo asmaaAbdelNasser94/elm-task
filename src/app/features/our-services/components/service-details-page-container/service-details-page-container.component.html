@@ -19,7 +19,8 @@
             </div>
 
             <p-button class="elm-service-details-page-container__start flex-shrink-0" type="button"
-              [label]="'_Services.details.start' | translate" [ariaLabel]="'_Services.details.start' | translate" />
+              [label]="'_Services.details.start' | translate" [ariaLabel]="'_Services.details.start' | translate"
+              (onClick)="startService()" />
           </div>
 
           <div class="elm-service-details-page-container__copy">

@@ -1,20 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin service-section-mobile {
-  @include respond-to-Xsmall {
-    @content;
-  }
-
-  @include respond-to-small {
-    @content;
-  }
-
-  @include respond-to-medium {
-    @content;
-  }
-}
-
 :host {
   display: block;
 
@@ -31,7 +17,7 @@
       width: min(100%, 80rem);
       margin-inline: auto;
 
-      @include service-section-mobile {
+      @include respond-to-mobile {
         padding-inline: $spacing-xl;
       }
     }
@@ -143,7 +129,7 @@
     overflow: visible;
     padding-inline: max(0px, calc((100% - 80rem) / 2));
 
-    @include service-section-mobile {
+    @include respond-to-mobile {
       padding-inline: $spacing-xl;
     }
 
@@ -168,7 +154,7 @@
     justify-self: center;
     overflow: hidden;
 
-    @include service-section-mobile {
+    @include respond-to-mobile {
       width: calc(100% + #{$spacing-xl} + #{$spacing-xl});
       margin-inline: calc(-1 * #{$spacing-xl});
     }

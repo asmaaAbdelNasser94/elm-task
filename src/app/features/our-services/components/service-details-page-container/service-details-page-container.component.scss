@@ -1,20 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin details-desktop {
-  @include respond-to-large {
-    @content;
-  }
-
-  @include respond-to-Xlarge {
-    @content;
-  }
-
-  @include respond-to-2Xlarge {
-    @content;
-  }
-}
-
 :host {
   display: block;
 
@@ -35,7 +21,7 @@
     display: flex;
     flex-direction: column;
 
-    @include details-desktop {
+    @include respond-from-large {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 26rem;
       column-gap: $spacing-3xl;
@@ -72,7 +58,7 @@
     align-items: flex-start;
     gap: $spacing-xl;
 
-    @include details-desktop {
+    @include respond-from-large {
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
@@ -87,7 +73,7 @@
     gap: $spacing-xl;
     min-width: 0;
 
-    @include details-desktop {
+    @include respond-from-large {
       flex: 1;
     }
   }

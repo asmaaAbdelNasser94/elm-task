@@ -1,20 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin header-mobile {
-  @include respond-to-Xsmall {
-    @content;
-  }
-
-  @include respond-to-small {
-    @content;
-  }
-
-  @include respond-to-medium {
-    @content;
-  }
-}
-
 :host {
   display: block;
 
@@ -34,7 +20,7 @@
           display: none;
         }
 
-        @include header-mobile {
+        @include respond-to-mobile {
           position: relative;
           padding-inline: $spacing-xl;
         }
@@ -46,7 +32,7 @@
         align-items: center;
         gap: $spacing-md;
 
-        @include header-mobile {
+        @include respond-to-mobile {
           position: static;
         }
       }
@@ -55,7 +41,7 @@
         gap: 0;
         padding-inline-start: $spacing-xl;
 
-        @include header-mobile {
+        @include respond-to-mobile {
           display: none;
         }
       }
@@ -68,15 +54,12 @@
     }
   }
 
-  .elm-header__actions,
-  .elm-header__drawer-actions {
+  .elm-header__actions {
     display: flex;
     align-items: center;
     gap: $spacing-md;
-  }
 
-  .elm-header__actions {
-    @include header-mobile {
+    @include respond-to-mobile {
       display: none;
     }
   }
@@ -84,13 +67,13 @@
   .elm-header__menu {
     display: none;
 
-    @include header-mobile {
+    @include respond-to-mobile {
       display: inline-flex;
     }
   }
 
   .elm-header__logo--desktop {
-    @include header-mobile {
+    @include respond-to-mobile {
       display: none;
     }
   }
@@ -98,7 +81,7 @@
   .elm-header__logo--mobile {
     display: none;
 
-    @include header-mobile {
+    @include respond-to-mobile {
       display: inline-flex;
       position: absolute;
       left: 50%;
@@ -124,8 +107,10 @@
   }
 
   .elm-header__drawer-actions {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: $spacing-md;
     margin-top: $spacing-xl;
   }
 }

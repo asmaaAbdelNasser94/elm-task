@@ -3,8 +3,8 @@ import { ServiceTag } from '../../../shared/components/service-section/model/ser
 import { ServiceDetailApps, ServiceDetailContact, ServiceDetailFact, ServiceDetailMark, ServiceDetailTab } from '../models/services.model';
 
 export const serviceDetailBreadcrumb: MenuItem[] = [
-  { label: '_Services.details.breadcrumb.parent' },
-  { label: '_Services.details.breadcrumb.current' },
+  { label: '_Layout.header.home', routerLink: '/home' },
+  { label: '_Services.details.title' },
 ];
 
 export const serviceDetailTags: ServiceTag[] = [

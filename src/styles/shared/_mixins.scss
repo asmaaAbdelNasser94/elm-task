@@ -64,4 +64,45 @@
   }
 }
 
+// Same closed ranges as Xsmall + small + medium (300–1023).
+@mixin respond-to-mobile {
+  @include respond-to-Xsmall {
+    @content;
+  }
+
+  @include respond-to-small {
+    @content;
+  }
+
+  @include respond-to-medium {
+    @content;
+  }
+}
+
+// Same closed ranges as large + Xlarge + 2Xlarge (1024 and up).
+@mixin respond-from-large {
+  @include respond-to-large {
+    @content;
+  }
+
+  @include respond-to-Xlarge {
+    @content;
+  }
+
+  @include respond-to-2Xlarge {
+    @content;
+  }
+}
+
+// Same closed ranges as Xlarge + 2Xlarge (1280 and up).
+@mixin respond-from-Xlarge {
+  @include respond-to-Xlarge {
+    @content;
+  }
+
+  @include respond-to-2Xlarge {
+    @content;
+  }
+}
+
 //=========================================================================

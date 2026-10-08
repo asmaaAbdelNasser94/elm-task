@@ -1,20 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin home-hero-mobile {
-  @include respond-to-Xsmall {
-    @content;
-  }
-
-  @include respond-to-small {
-    @content;
-  }
-
-  @include respond-to-medium {
-    @content;
-  }
-}
-
 :host {
   display: block;
 }
@@ -93,7 +79,7 @@
     }
   }
 
-  @include home-hero-mobile {
+  @include respond-to-mobile {
     height: 26.875rem;
   }
 }

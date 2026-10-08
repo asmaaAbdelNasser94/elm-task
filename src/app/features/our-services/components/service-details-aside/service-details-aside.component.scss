@@ -1,28 +1,12 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin details-desktop {
-  @include respond-to-large {
-    @content;
-  }
-
-  @include respond-to-Xlarge {
-    @content;
-  }
-
-  @include respond-to-2Xlarge {
-    @content;
-  }
-}
-
 :host {
   display: block;
   width: 100%;
   margin-top: $spacing-5xl;
 
-  @include details-desktop {
-    width: 100%;
-    margin-top: $spacing-5xl;
+  @include respond-from-large {
     position: relative;
     z-index: 1;
   }
@@ -39,12 +23,12 @@
     flex-direction: column;
     align-items: flex-start;
     gap: $spacing-xs;
-  }
 
-  &__fact--payment {
-    align-items: stretch;
-    width: 100%;
-    gap: $spacing-md;
+    &--payment {
+      align-items: stretch;
+      width: 100%;
+      gap: $spacing-md;
+    }
   }
 
   &__fact-title,

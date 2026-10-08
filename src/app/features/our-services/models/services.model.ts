@@ -25,3 +25,9 @@ export interface ServiceDetailTab {
     id: string;
     labelKey: string;
 }
+
+export interface StartServiceStep {
+    value: number;
+    titleKey: string;
+    descriptionKey: string;
+}

@@ -1,0 +1,27 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.elm-step-form {
+  &__required {
+    display: flex;
+    justify-content: flex-start;
+    gap: $spacing-xs;
+    margin: 0 0 $spacing-4xl;
+    color: $color-text-error;
+    font-size: $font-size-text-sm;
+    line-height: $line-height-text-sm;
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: $spacing-5xl;
+    row-gap: $spacing-3xl;
+  }
+}
+
+@include respond-to-mobile {
+  .elm-step-form__fields {
+    grid-template-columns: 1fr;
+  }
+}

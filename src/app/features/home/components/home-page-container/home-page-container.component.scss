@@ -1,20 +1,6 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin content-mobile {
-  @include respond-to-Xsmall {
-    @content;
-  }
-
-  @include respond-to-small {
-    @content;
-  }
-
-  @include respond-to-medium {
-    @content;
-  }
-}
-
 :host {
   display: block;
 
@@ -23,7 +9,7 @@
     margin-inline: auto;
     margin-block: $spacing-5xl;
 
-    @include content-mobile {
+    @include respond-to-mobile {
       padding-inline: $spacing-xl;
     }
   }

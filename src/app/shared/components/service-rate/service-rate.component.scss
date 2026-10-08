@@ -1,23 +1,9 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-@mixin rate-desktop {
-  @include respond-to-large {
-    @content;
-  }
-
-  @include respond-to-Xlarge {
-    @content;
-  }
-
-  @include respond-to-2Xlarge {
-    @content;
-  }
-}
-
 :host {
   display: block;
-  border-block: .0625rem solid $color-primary;
+  border-block: $border-width solid $color-primary;
 
   @include rtl-only {
     ::ng-deep .p-rating {
@@ -36,7 +22,7 @@
     margin-inline: auto;
     padding: $spacing-xl;
 
-    @include rate-desktop {
+    @include respond-from-large {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -79,7 +65,7 @@
     align-items: flex-start;
     gap: $spacing-xl;
 
-    @include rate-desktop {
+    @include respond-from-large {
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
@@ -87,7 +73,7 @@
   }
 
   &__footer {
-    @include rate-desktop {
+    @include respond-from-large {
       align-items: center;
     }
   }
@@ -128,7 +114,7 @@
     display: grid;
     gap: $spacing-3xl;
 
-    @include rate-desktop {
+    @include respond-from-large {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: start;
     }

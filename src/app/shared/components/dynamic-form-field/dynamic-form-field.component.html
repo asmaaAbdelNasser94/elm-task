@@ -1,0 +1,67 @@
+<div class="elm-dynamic-form-field" [formGroup]="form()">
+  @if (field().type === fieldType.CUSTOM && field().template) {
+  <ng-container *ngTemplateOutlet="field().template!; context: { form: form() }" />
+  } @else {
+  @if (field().label) {
+  <div class="elm-dynamic-form-field__label">
+    <label [for]="field().formControlName">{{ field().label }}</label>
+    @if (field().required) {
+    <span class="elm-dynamic-form-field__required" aria-hidden="true">*</span>
+    }
+  </div>
+  }
+
+  <div class="elm-dynamic-form-field__control">
+    @switch (field().type) {
+    @case (fieldType.TEXT) {
+    @if (field().icon) {
+    <p-iconfield iconPosition="right">
+      <p-inputicon>
+        <i [class]="'elm ' + field().icon" aria-hidden="true"></i>
+      </p-inputicon>
+      <input pInputText class="w-100" [id]="field().formControlName" [name]="field().formControlName"
+        [formControlName]="field().formControlName" [placeholder]="field().placeholder ?? ''"
+        [class.p-invalid]="invalid()" />
+    </p-iconfield>
+    } @else {
+    <input pInputText class="w-100" [id]="field().formControlName" [name]="field().formControlName"
+      [formControlName]="field().formControlName" [placeholder]="field().placeholder ?? ''"
+      [class.p-invalid]="invalid()" />
+    }
+    }
+
+    @case (fieldType.TEXTAREA) {
+    <textarea pTextarea class="w-100" [id]="field().formControlName" [name]="field().formControlName"
+      [formControlName]="field().formControlName" [placeholder]="field().placeholder ?? ''" rows="4" cols="30"
+      [class.p-invalid]="invalid()"></textarea>
+    }
+
+    @case (fieldType.SELECT) {
+    <p-select class="w-100" [inputId]="field().formControlName" [name]="field().formControlName"
+      [options]="field().options ?? []" [optionLabel]="field().optionLabel" [optionValue]="field().optionValue"
+      [formControlName]="field().formControlName" [placeholder]="field().placeholder ?? ''" appendTo="body"
+      [class.p-invalid]="invalid()" />
+    }
+
+    @case (fieldType.MULTISELECT) {
+    <p-multiSelect class="w-100" [inputId]="field().formControlName" [name]="field().formControlName"
+      [options]="field().options ?? []" [optionLabel]="field().optionLabel" [formControlName]="field().formControlName"
+      [placeholder]="field().placeholder ?? ''" appendTo="body" />
+    }
+
+    @case (fieldType.DATE) {
+    <p-datepicker class="w-100" [inputId]="field().formControlName" [name]="field().formControlName"
+      [formControlName]="field().formControlName" [placeholder]="field().placeholder ?? ''" dateFormat="yy-mm-dd"
+      appendTo="body" [readonlyInput]="true" />
+    }
+    }
+  </div>
+
+  @if (field().hint) {
+  <p class="elm-dynamic-form-field__hint" [class.elm-dynamic-form-field__hint--error]="invalid()">
+    <i class="pi pi-info-circle" aria-hidden="true"></i>
+    <span>{{ field().hint }}</span>
+  </p>
+  }
+  }
+</div>

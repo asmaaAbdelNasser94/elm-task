@@ -46,13 +46,7 @@
       max-width: 16.666%;
     }
 
-    @include respond-to-Xlarge {
-      flex-basis: 10% !important;
-      width: 10%;
-      max-width: 10%;
-    }
-
-    @include respond-to-2Xlarge {
+    @include respond-from-Xlarge {
       flex-basis: 10% !important;
       width: 10%;
       max-width: 10%;

@@ -116,10 +116,6 @@
       "secondaryAction": "Secondary action"
     },
     "details": {
-      "breadcrumb": {
-        "parent": "Link",
-        "current": "Link"
-      },
       "title": "Building permit",
       "related": {
         "title": "Related services",
@@ -217,6 +213,33 @@
     "title": "Actions"
   },
   "_StartService": {
-    "title": "Start service"
+    "title": "Start service",
+    "form": {
+      "title": "Text fields",
+      "description": "When using forms, the standard fields are text fields, usually for entering short text. Field states are default, active, focused, error, hint, and disabled.",
+      "requiredNote": "Required information",
+      "requiredLabel": "Mandatory text input",
+      "optionalLabel": "Optional text input",
+      "placeholder": "Hint text",
+      "addon": "Text",
+      "hint": "Helper text",
+      "next": "Next",
+      "send": "Send",
+      "back": "Back"
+    },
+    "steps": {
+      "1": {
+        "title": "First step",
+        "description": "Step description"
+      },
+      "2": {
+        "title": "Second step",
+        "description": "Step description"
+      },
+      "3": {
+        "title": "Third step",
+        "description": "Step description"
+      }
+    }
   }
 }
