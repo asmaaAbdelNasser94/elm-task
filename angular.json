@@ -44,7 +44,10 @@
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src", "src/styles/shared"]
+              "includePaths": [
+                "src",
+                "src/styles/shared"
+              ]
             },
             "server": "src/main.server.ts",
             "outputMode": "server",

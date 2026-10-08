@@ -1,0 +1,38 @@
+<p-tabs [(value)]="activeTab">
+  <p-tablist>
+    @for (tab of tabs; track tab.id) {
+    <p-tab [value]="tab.id">{{ tab.labelKey | translate }}</p-tab>
+    }
+  </p-tablist>
+  <p-tabpanels>
+    <p-tabpanel value="steps">
+      <div class="elm-service-details-tabs__panel">
+        <div class="elm-service-details-tabs__media" aria-hidden="true">
+          <span class="elm-service-details-tabs__play"></span>
+        </div>
+        <ol class="elm-service-details-tabs__steps">
+          @for (step of steps; track step; let index = $index) {
+          <li>
+            <span class="elm-service-details-tabs__step-index">{{ index + 1 }} -</span>
+            <span>{{ step | translate }}</span>
+          </li>
+          }
+        </ol>
+      </div>
+    </p-tabpanel>
+    <p-tabpanel value="terms">
+      <div class="elm-service-details-tabs__copy">
+        @for (item of terms; track item) {
+        <p class="mb-0">- {{ item | translate }}</p>
+        }
+      </div>
+    </p-tabpanel>
+    <p-tabpanel value="documents">
+      <ul class="elm-service-details-tabs__copy">
+        @for (item of documents; track item) {
+        <li>{{ item | translate }}</li>
+        }
+      </ul>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>

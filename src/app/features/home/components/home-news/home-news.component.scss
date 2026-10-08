@@ -1,0 +1,211 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin news-desktop {
+  @include respond-to-large {
+    @content;
+  }
+
+  @include respond-to-Xlarge {
+    @content;
+  }
+
+  @include respond-to-2Xlarge {
+    @content;
+  }
+}
+
+:host {
+  display: block;
+}
+
+.elm-home-news__carousel {
+  margin-top: $spacing-4xl;
+}
+
+:host ::ng-deep {
+  .elm-news-card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+    height: 100%;
+    padding: $spacing-xl;
+    background: $color-bg-surface;
+    border: $border-width solid $color-border-secondary;
+    border-radius: $radius-lg;
+    box-shadow: none;
+
+    .p-card-header,
+    .p-card-body,
+    .p-card-footer {
+      padding: 0;
+      margin: 0;
+    }
+
+    .p-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: $spacing-3xl;
+    }
+
+    .elm-news-card__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: $radius-md;
+    }
+
+    .p-card-title {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+      margin: 0;
+
+      span {
+        margin: 0;
+        color: $color-text-primary;
+        font-size: $font-size-text-lg;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-text-lg;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      p {
+        margin: 0;
+        color: $color-text-paragraph;
+        font-size: $font-size-text-md;
+        font-weight: $font-weight-regular;
+        line-height: $line-height-text-md;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+      }
+    }
+
+    .p-card-footer {
+      margin-top: auto;
+    }
+  }
+
+  .p-carousel-content-container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas:
+      'viewport viewport viewport'
+      'indicators prev next';
+    align-items: center;
+    row-gap: $spacing-3xl;
+    column-gap: $spacing-md;
+
+    @include rtl-only {
+      grid-template-columns: auto auto 1fr;
+      grid-template-areas:
+        'viewport viewport viewport'
+        'next prev indicators';
+    }
+  }
+
+  .p-carousel-content {
+    display: contents;
+  }
+
+  .p-carousel-viewport {
+    grid-area: viewport;
+    overflow: hidden;
+  }
+
+  .p-carousel-item {
+    display: flex;
+    flex: 0 0 100% !important;
+    width: 100%;
+    max-width: 100%;
+
+    @include news-desktop {
+      flex-basis: 33.333% !important;
+      width: 33.333%;
+      max-width: 33.333%;
+      padding-inline: calc(#{$spacing-3xl} / 2);
+    }
+  }
+
+  .p-carousel-item-list {
+    @include news-desktop {
+      margin-inline: calc(#{$spacing-3xl} / -2);
+    }
+  }
+
+  .p-items-hidden .p-carousel-item {
+    visibility: visible;
+  }
+
+  .p-carousel-indicator-list,
+  .p-carousel-prev-button,
+  .p-carousel-next-button {
+    @include news-desktop {
+      display: none;
+    }
+  }
+
+  .p-carousel-indicator-list {
+    grid-area: indicators;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+
+    @include rtl-only {
+      justify-content: flex-end;
+    }
+  }
+
+  .p-carousel-indicator-button {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0;
+    border-radius: $radius-full;
+    background: $color-neutral-300;
+  }
+
+  .p-carousel-indicator[data-p-active='true'] .p-carousel-indicator-button {
+    background: $color-primary-600;
+  }
+
+  .p-carousel-prev-button {
+    grid-area: prev;
+  }
+
+  .p-carousel-next-button {
+    grid-area: next;
+  }
+
+  .p-carousel-prev-button,
+  .p-carousel-next-button {
+    .p-button.p-button-secondary {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
+      border-radius: $radius-full;
+      background: $color-primary-600;
+      border: $border-width solid $color-primary-600;
+
+      .elm {
+        background-color: $color-neutral-0;
+      }
+    }
+
+    &.p-disabled .p-button.p-button-secondary {
+      background: $color-bg-surface;
+      border-color: $color-primary-600;
+      opacity: 1;
+
+      .elm {
+        background-color: $color-primary-600;
+      }
+    }
+  }
+}

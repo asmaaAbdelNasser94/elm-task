@@ -1,0 +1,65 @@
+<footer class="elm-footer">
+  <div class="elm-footer__inner">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 g-lg-5">
+      @for (group of groups; track group.titleKey) {
+      <div class="col d-flex flex-column gap-3 p-0 pe-4">
+        <h2 class="elm-footer__title">{{ group.titleKey | translate }}</h2>
+        <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+          @for (link of group.links; track link) {
+          <li>
+            <a class="elm-footer__link" href="#" (click)="$event.preventDefault()">{{ link | translate }}</a>
+          </li>
+          }
+        </ul>
+      </div>
+      }
+
+      <div class="col d-flex flex-column gap-4 p-0">
+        <div class="d-flex flex-column gap-3 ">
+          <h2 class="elm-footer__title">{{ '_Layout.footer.social.title' | translate }}</h2>
+          <div class="d-flex flex-wrap gap-2">
+            @for (item of socials; track item.icon) {
+            <p-button class="elm-footer__icon" type="button" severity="secondary" [outlined]="true"
+              [icon]="'elm ' + item.icon" [ariaLabel]="item.labelKey | translate" />
+            }
+          </div>
+        </div>
+
+        <div class="d-flex flex-column gap-3">
+          <h2 class="elm-footer__title">{{ '_Layout.footer.accessibility.title' | translate }}</h2>
+          <div class="d-flex flex-wrap gap-2">
+            @for (item of tools; track item.icon) {
+            <p-button class="elm-footer__icon" type="button" severity="secondary" [outlined]="true"
+              [icon]="'elm ' + item.icon" [ariaLabel]="item.labelKey | translate" />
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 w-100 p-0 mt-0">
+        <div
+          class="elm-footer__bottom d-flex flex-column flex-lg-row align-items-start justify-content-lg-between gap-4">
+          <div class="d-flex flex-column gap-2">
+            <ul class="list-unstyled d-flex flex-wrap gap-3 mb-0">
+              @for (link of utilityLinks; track link) {
+              <li>
+                <a class="elm-footer__link elm-footer__link--underline" href="#" (click)="$event.preventDefault()">
+                  {{ link | translate }}
+                </a>
+              </li>
+              }
+            </ul>
+            <p class="elm-footer__note mb-0">{{ '_Layout.footer.copyright' | translate }}</p>
+            <p class="elm-footer__note mb-0">{{ '_Layout.footer.developedBy' | translate }}</p>
+            <p class="elm-footer__note mb-0">{{ '_Layout.footer.modified' | translate }}</p>
+          </div>
+
+          <div class="elm-footer__logos d-flex align-items-center gap-3">
+            <img class="elm-footer__logo" src="/images/elm-logo-white%20.svg" [alt]="'_Layout.footer.logoAlt' | translate" />
+            <img class="elm-footer__registered" src="/images/registered.png" [alt]="'_Layout.footer.registeredAlt' | translate" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

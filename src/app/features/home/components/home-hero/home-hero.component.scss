@@ -1,0 +1,99 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin home-hero-mobile {
+  @include respond-to-Xsmall {
+    @content;
+  }
+
+  @include respond-to-small {
+    @content;
+  }
+
+  @include respond-to-medium {
+    @content;
+  }
+}
+
+:host {
+  display: block;
+}
+
+.elm-home-hero {
+  height: 30.6875rem;
+  background: linear-gradient(45deg, $color-primary-800 0%, $color-primary-600 100%);
+  color: $color-text-white;
+
+  &__inner {
+    max-width: 80rem;
+  }
+
+  h1 {
+    font-size: $font-size-display-xl;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-display-xl;
+  }
+
+  p {
+    font-size: $font-size-text-xl;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-text-xl;
+    max-width: 39rem;
+  }
+
+
+  ::ng-deep {
+
+    .p-carousel,
+    .p-carousel-content-container,
+    .p-carousel-content,
+    .p-carousel-viewport,
+    .p-carousel-item-list,
+    .p-carousel-item {
+      height: 100%;
+    }
+
+    .p-carousel-viewport {
+      overflow: hidden;
+    }
+
+    .p-carousel-item-list {
+      display: flex;
+      width: 100%;
+    }
+
+    .p-carousel-item {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .p-carousel-content-container {
+      position: relative;
+    }
+
+    .p-carousel-indicator-list {
+      position: absolute;
+      inset-inline: 0;
+      bottom: $spacing-3xl;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .p-carousel-indicator-button {
+      width: 1rem;
+      height: 1rem;
+      border: none;
+      border-radius: $radius-full;
+      background: $color-neutral-200;
+    }
+
+    .p-carousel-indicator[data-p-active='true'] .p-carousel-indicator-button {
+      background: $color-primary-600;
+    }
+  }
+
+  @include home-hero-mobile {
+    height: 26.875rem;
+  }
+}

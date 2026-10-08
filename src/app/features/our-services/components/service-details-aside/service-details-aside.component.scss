@@ -1,0 +1,175 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin details-desktop {
+  @include respond-to-large {
+    @content;
+  }
+
+  @include respond-to-Xlarge {
+    @content;
+  }
+
+  @include respond-to-2Xlarge {
+    @content;
+  }
+}
+
+:host {
+  display: block;
+  width: 100%;
+  margin-top: $spacing-5xl;
+
+  @include details-desktop {
+    width: 100%;
+    margin-top: $spacing-5xl;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.elm-service-details-aside {
+  &__body {
+    width: 100%;
+    gap: $spacing-xl;
+  }
+
+  &__fact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xs;
+  }
+
+  &__fact--payment {
+    align-items: stretch;
+    width: 100%;
+    gap: $spacing-md;
+  }
+
+  &__fact-title,
+  &__contact-title {
+    color: $color-text-display;
+    font-size: $font-size-text-md;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-text-md;
+
+    &.fqa {
+      font-size: $font-size-text-lg;
+      line-height: $line-height-text-lg;
+    }
+  }
+
+  &__fact-value {
+    padding-inline-start: calc(1.25rem + #{$spacing-md});
+    color: $color-text-display;
+    font-size: $font-size-text-md;
+    line-height: $line-height-text-md;
+    font-weight: $font-weight-regular;
+  }
+
+  &__marks {
+    width: 100%;
+    gap: $spacing-md;
+  }
+
+  &__faq,
+  &__contact {
+    align-items: flex-start;
+    gap: $spacing-md;
+  }
+
+  &__faq {
+    width: 100%;
+    gap: $spacing-xl;
+  }
+
+  &__contact {
+    gap: $spacing-xs;
+  }
+
+  &__contact-heading {
+    align-self: flex-start;
+  }
+
+  &__apps {
+    align-items: stretch;
+    width: 100%;
+    gap: $spacing-md;
+  }
+
+  &__app-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $spacing-lg;
+    width: 100%;
+  }
+
+  &__app-stack {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__contact-link {
+    display: inline-flex;
+    align-self: center;
+    align-items: center;
+    gap: $spacing-md;
+    color: $color-primary;
+    font-size: $font-size-text-md;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-text-md;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__fact-icon.elm {
+    background-color: $color-primary;
+  }
+
+  &__link-icon.elm {
+    width: 1rem;
+    height: 1rem;
+    background-color: $color-primary;
+  }
+
+  &__app {
+    height: 2.5rem;
+    width: auto;
+  }
+}
+
+:host ::ng-deep {
+  .elm-service-details-aside__card {
+    background: $color-bg-surface;
+    border: $border-width solid $color-border-default;
+    border-radius: $radius-lg;
+    box-shadow: none;
+
+    .p-card-body {
+      padding: $spacing-5xl;
+    }
+
+    .p-card-content {
+      padding: 0;
+    }
+  }
+
+  .elm-service-details-aside__divider.p-divider {
+    margin: 0;
+    margin-block: $spacing-md;
+
+    &::before {
+      border-block-start-color: $color-border-default;
+    }
+  }
+
+  .elm-service-details-aside__guide.p-button {
+    background: $color-neutral-50;
+  }
+}

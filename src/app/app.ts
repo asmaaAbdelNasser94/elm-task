@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { LanguageService } from './core/services/language.service';
 
 @Component({
-  imports: [],
+  imports: [RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

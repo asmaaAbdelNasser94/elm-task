@@ -1,0 +1,16 @@
+<div class="elm-section-head">
+  <div class="d-flex align-items-center justify-content-between gap-3">
+    <h2 class="elm-section-head__title">{{ '_Home.about.title' | translate }}</h2>
+    <p-button class="flex-shrink-0" type="button" severity="secondary" [outlined]="true"
+      [label]="'_Home.about.action' | translate" [ariaLabel]="'_Home.about.action' | translate" />
+  </div>
+  <p class="elm-section-head__description full">{{ '_Home.about.description' | translate }}</p>
+</div>
+
+<div class="row row-cols-2 row-cols-lg-4 g-4 gap-lg-4 justify-content-center elm-home-about__stats">
+  @for (stat of stats; track stat.icon) {
+  <div class="col mt-0 p-3 stat-item">
+    <elm-home-stat [icon]="stat.icon" [value]="stat.value" [label]="'_Home.about.person' | translate" />
+  </div>
+  }
+</div>

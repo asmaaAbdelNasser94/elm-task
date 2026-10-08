@@ -1,0 +1,50 @@
+<p-menubar class="elm-header" [model]="menuItems()" [ariaLabel]="'_Layout.header.nav' | translate">
+  <ng-template #start>
+    <p-button class="elm-header__menu" type="button" icon="pi pi-bars" [text]="true" severity="secondary"
+      [ariaLabel]="'_Layout.header.menu' | translate" (onClick)="menuOpen.set(true)" />
+
+    <a class="elm-header__logo elm-header__logo--desktop" routerLink="/"
+      [attr.aria-label]="'_Layout.header.home' | translate">
+      <img src="/images/elm-full-logo.svg" alt="Elm Portal Logo" />
+    </a>
+  </ng-template>
+
+  <ng-template #end>
+    <a class="elm-header__logo elm-header__logo--mobile" routerLink="/"
+      [attr.aria-label]="'_Layout.header.home' | translate">
+      <img src="/images/elm-full-logo.svg" alt="" />
+    </a>
+
+    <div class="elm-header__actions">
+      <ng-container [ngTemplateOutlet]="headerActions" />
+    </div>
+  </ng-template>
+
+  <ng-template #submenuicon>
+    <i class="elm chevron-down"></i>
+  </ng-template>
+</p-menubar>
+
+<!-- Header Drawer for mobile -->
+
+<p-drawer id="elm-header-drawer" [(visible)]="menuOpen" [position]="drawerPosition"
+  [header]="'_Layout.header.menu' | translate" styleClass="elm-header-drawer">
+  <p-panelmenu class="elm-header__drawer-nav" [model]="menuItems()"
+    [attr.aria-label]="'_Layout.header.nav' | translate" />
+
+  <div class="elm-header__drawer-actions">
+    <ng-container [ngTemplateOutlet]="headerActions" />
+  </div>
+</p-drawer>
+
+<!-- Header Actions Template -->
+
+<ng-template #headerActions>
+  <p-button type="button" icon="elm search" [text]="true" [label]="'_Layout.header.search' | translate" [rounded]="true"
+    severity="contrast" [ariaLabel]="'_Layout.header.search' | translate" [autofocus]="false" />
+  <p-button class="elm-header__language" type="button" icon="elm lang" [text]="true" severity="contrast"
+    (onClick)="toggleLanguage()"
+    [label]="_LanguageService.currentLang() === 'ar' ? ('_Layout.header.language.en' | translate) : ('_Layout.header.language.ar' | translate)" />
+  <p-button type="button" icon="elm user" [text]="true" [label]="'_Layout.header.login' | translate"
+    severity="contrast" />
+</ng-template>

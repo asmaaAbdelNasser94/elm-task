@@ -1,0 +1,25 @@
+<div class="elm-section-head">
+  <h2 class="elm-section-head__title">{{ '_Home.partners.title' | translate }}</h2>
+</div>
+
+<div class="elm-home-partners__carousel">
+  <p-carousel [value]="partners" [numVisible]="10" [numScroll]="1" [showNavigators]="true" [showIndicators]="false"
+    [responsiveOptions]="responsiveOptions">
+    <ng-template #item let-partner>
+      <div class="elm-partner d-flex flex-column align-items-center justify-content-center">
+        <span [class]="'elm ' + partner.icon" aria-hidden="true"></span>
+        <span class="elm-partner__label">{{ partner.labelKey | translate }}</span>
+      </div>
+    </ng-template>
+    <ng-template #previousicon>
+      <span class="p-carousel-prev-icon d-flex" aria-hidden="true">
+        <span class="elm chevron-left"></span>
+      </span>
+    </ng-template>
+    <ng-template #nexticon>
+      <span class="p-carousel-next-icon d-flex" aria-hidden="true">
+        <span class="elm chevron-right"></span>
+      </span>
+    </ng-template>
+  </p-carousel>
+</div>

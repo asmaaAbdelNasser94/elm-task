@@ -1,0 +1,66 @@
+<p-card styleClass="elm-service-details-aside__card">
+  <div class="elm-service-details-aside__body d-flex flex-column">
+    @for (fact of facts; track fact.titleKey) {
+    <div class="elm-service-details-aside__fact">
+      <div class="d-flex align-items-center gap-2">
+        <span class="elm-service-details-aside__fact-icon elm {{ fact.icon }}" aria-hidden="true"></span>
+        <h2 class="elm-service-details-aside__fact-title mb-0">{{ fact.titleKey | translate }}</h2>
+      </div>
+      <p class="elm-service-details-aside__fact-value mb-0">{{ fact.valueKey | translate }}</p>
+    </div>
+    }
+
+    <div class="elm-service-details-aside__fact elm-service-details-aside__fact--payment">
+      <h2 class="elm-service-details-aside__fact-title mb-0">{{ '_Services.details.facts.payment' | translate }}</h2>
+      <div class="elm-service-details-aside__marks d-flex flex-wrap">
+        @for (mark of payments; track mark.src) {
+        <img [src]="mark.src" [alt]="mark.altKey | translate" />
+        }
+      </div>
+    </div>
+
+    <p-divider styleClass="elm-service-details-aside__divider" />
+
+    <div class="elm-service-details-aside__faq d-flex flex-column">
+      <div class="d-flex flex-column gap-1">
+        <h2 class="elm-service-details-aside__fact-title mb-0 fqa">{{ '_Services.details.faq.title' | translate }}</h2>
+        <a class="elm-service-details-aside__contact-link" href="#" (click)="$event.preventDefault()">
+          <span>{{ 'Ministry-FAQs-page' | translate }}</span>
+          <span class="elm-service-details-aside__link-icon elm link-square" aria-hidden="true"></span>
+        </a>
+      </div>
+      @for (contact of contacts; track contact.label) {
+      <div class="elm-service-details-aside__contact d-flex flex-column">
+        @if (contact.titleKey) {
+        <div class="elm-service-details-aside__contact-heading d-flex align-items-center gap-2">
+          <span class="elm-service-details-aside__fact-icon elm {{ contact.titleIcon }}" aria-hidden="true"></span>
+          <h3 class="elm-service-details-aside__contact-title mb-0">{{ contact.titleKey | translate }}</h3>
+        </div>
+        }
+        <a class="elm-service-details-aside__contact-link" [href]="contact.href"
+          (click)="contact.href === '#' && $event.preventDefault()">
+          <span>{{ contact.label }}</span>
+          <span class="elm-service-details-aside__link-icon elm link-square" aria-hidden="true"></span>
+        </a>
+      </div>
+      }
+      <p-button styleClass="elm-service-details-aside__guide w-100" severity="secondary"
+        [label]="'_Services.details.faq.guide' | translate" [ariaLabel]="'_Services.details.faq.guide' | translate" />
+    </div>
+
+    <p-divider styleClass="elm-service-details-aside__divider" />
+
+    <div class="elm-service-details-aside__apps d-flex flex-column">
+      <h2 class="elm-service-details-aside__fact-title mb-0">{{ '_Services.details.apps.title' | translate }}</h2>
+      <div class="elm-service-details-aside__app-row">
+        <div class="elm-service-details-aside__app-stack">
+          @for (app of apps.side; track app.src) {
+          <img class="elm-service-details-aside__app" [src]="app.src" [alt]="app.altKey | translate" />
+          }
+        </div>
+        <img class="elm-service-details-aside__app" [src]="apps.featured.src"
+          [alt]="apps.featured.altKey | translate" />
+      </div>
+    </div>
+  </div>
+</p-card>

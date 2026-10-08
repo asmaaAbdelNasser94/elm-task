@@ -1,0 +1,54 @@
+<section class="elm-service-section" [class.elm-service-section--brand]="variant() === 'brand'"
+  [class.elm-service-section--navigators]="showNavigators()" [attr.aria-label]="title()">
+  <div class="elm-service-section__inner">
+    <div class="elm-section-head">
+      <div class="d-flex align-items-center justify-content-between gap-3">
+        <h2 class="elm-section-head__title">{{ title() }}</h2>
+        <p-button class="flex-shrink-0" type="button" [severity]="actionSeverity()" [text]="textBtn"
+          [outlined]="outlined()" [label]="actionLabel()" [ariaLabel]="actionLabel()" />
+      </div>
+      <p class="elm-section-head__description">{{ description() }}</p>
+    </div>
+  </div>
+
+  <div class="elm-service-section__carousel">
+    <p-carousel [value]="items()" [numVisible]="4" [numScroll]="1" [showNavigators]="showNavigators()"
+      [responsiveOptions]="responsiveOptions">
+      <ng-template #item let-card>
+        <p-card styleClass="elm-service-card">
+          <ng-template #header>
+            <p-avatar icon="elm checkmark-circle" shape="circle" aria-hidden="true" />
+          </ng-template>
+          <ng-template #title>
+            <span>{{ card.titleKey | translate }}</span>
+            <p>{{ card.descriptionKey | translate }}</p>
+          </ng-template>
+          <div class="elm-service-card__tags d-flex flex-wrap">
+            @for (tag of card.tags; track $index) {
+            <p-tag [value]="tag.labelKey | translate" [severity]="tag.severity" />
+            }
+          </div>
+          <ng-template #footer>
+            <div class="d-flex flex-wrap gap-2">
+              <p-button type="button" size="small" severity="secondary" [outlined]="true"
+                [label]="card.secondaryActionKey | translate" [ariaLabel]="card.secondaryActionKey | translate" />
+              <p-button type="button" size="small" [label]="card.primaryActionKey | translate"
+                [ariaLabel]="card.primaryActionKey | translate" (onClick)="openService(card.id)" />
+            </div>
+          </ng-template>
+        </p-card>
+      </ng-template>
+
+      <ng-template #previousicon>
+        <span class="p-carousel-prev-icon" aria-hidden="true">
+          <span class="elm chevron-left"></span>
+        </span>
+      </ng-template>
+      <ng-template #nexticon>
+        <span class="p-carousel-next-icon" aria-hidden="true">
+          <span class="elm chevron-right"></span>
+        </span>
+      </ng-template>
+    </p-carousel>
+  </div>
+</section>

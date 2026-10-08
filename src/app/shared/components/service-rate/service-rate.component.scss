@@ -1,0 +1,193 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin rate-desktop {
+  @include respond-to-large {
+    @content;
+  }
+
+  @include respond-to-Xlarge {
+    @content;
+  }
+
+  @include respond-to-2Xlarge {
+    @content;
+  }
+}
+
+:host {
+  display: block;
+  border-block: .0625rem solid $color-primary;
+
+  @include rtl-only {
+    ::ng-deep .p-rating {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.elm-service-rate {
+  &__bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xl;
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    padding: $spacing-xl;
+
+    @include rate-desktop {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-md;
+    min-width: 0;
+  }
+
+  &__average {
+    color: $color-text-primary;
+    font-size: $font-size-text-md;
+    line-height: $line-height-text-md;
+  }
+
+  &__reviews {
+    color: $color-neutral-500;
+    font-size: $font-size-text-md;
+    line-height: $line-height-text-md;
+  }
+
+  &__sheet {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    padding: $spacing-3xl $spacing-xl $spacing-4xl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3xl;
+  }
+
+  &__top,
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xl;
+
+    @include rate-desktop {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  &__footer {
+    @include rate-desktop {
+      align-items: center;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    max-width: 46rem;
+  }
+
+  &__title,
+  &__question-title {
+    color: $color-text-primary;
+    font-size: $font-size-text-lg;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-text-lg;
+  }
+
+  &__notice,
+  &__hint,
+  &__more {
+    color: $color-text-secondary;
+    font-size: $font-size-text-sm;
+    line-height: $line-height-text-sm;
+  }
+
+  &__more {
+    color: $color-text-primary;
+
+    a {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: $spacing-3xl;
+
+    @include rate-desktop {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+    }
+  }
+
+  &__question,
+  &__feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-md;
+    min-width: 0;
+  }
+
+  &__feedback {
+    width: 100%;
+    color: $color-text-primary;
+    font-size: $font-size-text-sm;
+    line-height: $line-height-text-sm;
+  }
+}
+
+:host ::ng-deep {
+  .p-rating-on-icon {
+    color: $color-primary;
+  }
+
+  .p-rating-off-icon {
+    color: $color-neutral-300;
+  }
+
+  .elm-service-rate__panel.p-panel {
+    border: 0;
+    border-radius: 0;
+    background: $color-bg-surface;
+    box-shadow: none;
+
+    .p-panel-content {
+      padding: 0;
+    }
+  }
+
+  .elm-service-rate__panel.p-panel-collapsed {
+    display: none;
+    border: 0;
+  }
+
+  .elm-service-rate__close.p-button {
+    background: transparent;
+    border-color: transparent;
+    color: $color-text-primary;
+    box-shadow: none;
+  }
+
+  .elm-service-rate__feedback .p-textarea {
+    width: 100%;
+    min-height: 7.5rem;
+    border-color: $color-border-field;
+    border-radius: $radius-sm;
+    color: $color-text-primary;
+  }
+}

@@ -1,0 +1,26 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.elm-home-about {
+  &__stats {
+    margin-top: $spacing-4xl;
+
+    .stat-item {
+      @include respond-to-large {
+        width: 14rem;
+      }
+
+      @include respond-to-Xlarge {
+        width: 14rem;
+      }
+
+      @include respond-to-2Xlarge {
+        width: 14rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+:host {
+  display: block;
+  align-self: flex-start;
+}
+
+:host ::ng-deep {
+  .elm-breadcrumb {
+    background: transparent;
+    border: 0;
+    padding: 0;
+
+    .p-breadcrumb-list {
+      gap: $spacing-xs;
+      margin: 0;
+      padding: 0;
+    }
+
+    .p-breadcrumb-item-label {
+      color: $color-text-secondary;
+      font-size: $font-size-text-sm;
+      line-height: $line-height-text-sm;
+    }
+
+    .elm {
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: $color-text-secondary;
+    }
+  }
+}

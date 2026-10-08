@@ -1,28 +1,42 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .p-button {
-  --p-button-primary-background: #{$color-primary};
-  --p-button-primary-border-color: #{$color-primary};
-  --p-button-primary-color: #{$color-text-white};
-  --p-button-primary-hover-background: #{$color-primary-dark};
-  --p-button-primary-hover-border-color: #{$color-primary-dark};
-  --p-button-primary-hover-color: #{$color-text-white};
-  --p-button-primary-active-background: #{$color-primary-dark};
-  --p-button-primary-active-border-color: #{$color-primary-dark};
-  --p-button-primary-active-color: #{$color-text-white};
-
-  --p-button-outlined-primary-color: #{$color-primary};
-  --p-button-outlined-primary-border-color: #{$color-primary};
-  --p-button-outlined-primary-hover-background: #{$color-primary};
-  --p-button-outlined-primary-hover-border-color: #{$color-primary};
-  --p-button-outlined-primary-hover-color: #{$color-text-white};
-  --p-button-outlined-primary-active-background: #{$color-primary-dark};
-  --p-button-outlined-primary-active-border-color: #{$color-primary-dark};
-  --p-button-outlined-primary-active-color: #{$color-text-white};
-
-  font-family: $font-family-base;
-  font-size: $font-size-text-md;
+  height: 2.5rem;
+  border-radius: $radius-sm;
+  padding: 0 $spacing-xl;
   font-weight: $font-weight-medium;
   line-height: $line-height-text-md;
-  gap: $spacing-md;
+  gap: $spacing-xs;
+
+  .p-button-label {
+    font-weight: $font-weight-medium;
+  }
+
+  &.p-button-contrast {
+    color: $color-text-primary;
+  }
+
+  &.p-button-secondary {
+    background: $color-neutral-0;
+    border-color: $color-neutral-0;
+    color: $color-text-primary;
+
+    &:not(:disabled):hover {
+      background: $color-neutral-50;
+      border-color: $color-neutral-50;
+      color: $color-text-primary;
+    }
+
+    &.p-button-outlined {
+      border-color: $color-neutral-300;
+    }
+  }
+
+
+  @include rtl-only {
+    .p-button-label {
+      order: 2;
+    }
+  }
 }

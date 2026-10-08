@@ -1,0 +1,15 @@
+<section class="elm-page-rate" [attr.aria-label]="'_Shared.pageRate.question' | translate">
+  <div class="elm-page-rate__prompt">
+    <p class="elm-page-rate__question mb-0">{{ '_Shared.pageRate.question' | translate }}</p>
+    <div class="elm-page-rate__actions d-flex gap-3">
+      <p-button type="button" [outlined]="answer === 'no'" [label]="'_Shared.pageRate.yes' | translate"
+        [attr.aria-pressed]="answer === 'yes'" (onClick)="choose('yes')" />
+      <p-button type="button" [outlined]="answer !== 'no'" [label]="'_Shared.pageRate.no' | translate"
+        [attr.aria-pressed]="answer === 'no'" (onClick)="choose('no')" />
+    </div>
+  </div>
+
+  <p class="elm-page-rate__result mb-0">
+    {{ '_Shared.pageRate.result' | translate: { percent: yesPercent(), count: responseCount() } }}
+  </p>
+</section>

@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+.p-tag {
+  height: 1.5rem;
+  padding-inline: $spacing-md;
+  border: $border-width solid transparent;
+  border-radius: $radius-sm;
+  font-size: $font-size-text-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-text-xs;
+
+  &.p-tag-success {
+    background: $color-bg-success;
+    border-color: $color-border-success;
+    color: $color-text-success;
+  }
+
+  &.p-tag-info {
+    background: $color-bg-info;
+    border-color: $color-border-info;
+    color: $color-text-info;
+  }
+
+  &.p-tag-secondary {
+    background: $color-bg-neutral;
+    border-color: $color-border-default;
+    color: $color-text-paragraph;
+  }
+}

@@ -1,0 +1,58 @@
+<div class="elm-service-details-page-container">
+  <div class="elm-service-details-page-container__inner">
+    <div class="elm-service-details-page-container__main">
+
+      <!-- header -->
+      <header class="elm-service-details-page-container__header">
+        <elm-breadcrumb [items]="breadcrumb" />
+
+        <div class="elm-service-details-page-container__body">
+          <div class="elm-service-details-page-container__content">
+            <div class="elm-service-details-page-container__heading">
+              <h1 class="elm-service-details-page-container__title mb-0">{{ '_Services.details.title' | translate }}
+              </h1>
+              <div class="elm-service-details-page-container__tags">
+                @for (tag of tags; track tag.labelKey) {
+                <p-tag [value]="tag.labelKey | translate" [severity]="tag.severity" />
+                }
+              </div>
+            </div>
+
+            <p-button class="elm-service-details-page-container__start flex-shrink-0" type="button"
+              [label]="'_Services.details.start' | translate" [ariaLabel]="'_Services.details.start' | translate" />
+          </div>
+
+          <div class="elm-service-details-page-container__copy">
+            <p class="elm-service-details-page-container__description mb-0">{{ '_Services.details.description' |
+              translate
+              }}</p>
+            <a class="elm-service-details-page-container__sla" href="#" (click)="$event.preventDefault()">
+              <span>{{ '_Services.details.sla' | translate }}</span>
+              <i class="elm link primary-icon" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- tabs -->
+      <elm-service-details-tabs />
+    </div>
+
+    <!-- service aside -->
+    <elm-service-details-aside />
+  </div>
+
+  <!-- related services -->
+  <elm-service-section variant="brand" [showNavigators]="false" [items]="relatedServices"
+    [title]="'_Services.details.related.title' | translate" [description]="'_Services.details.description' | translate"
+    [actionLabel]="'_Services.details.related.viewAll' | translate" [actionSeverity]="'contrast'" [textBtn]="true"
+    [outlined]="false" />
+
+  <p class="elm-service-details-page-container__updated">{{ '_Services.details.lastUpdated' | translate }}</p>
+
+  <!-- service ratings -->
+  <elm-service-rate [average]="3.9" [reviewCount]="1544" />
+
+  <!-- page ratings -->
+  <elm-page-rate [yesPercent]="60" [responseCount]="2843" />
+</div>

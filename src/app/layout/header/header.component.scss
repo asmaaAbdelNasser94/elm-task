@@ -1,0 +1,131 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin header-mobile {
+  @include respond-to-Xsmall {
+    @content;
+  }
+
+  @include respond-to-small {
+    @content;
+  }
+
+  @include respond-to-medium {
+    @content;
+  }
+}
+
+:host {
+  display: block;
+
+  ::ng-deep {
+    .elm-header {
+      &.p-menubar {
+        height: 4.5rem;
+        background: $color-bg-surface;
+        border: 0;
+        border-bottom: $border-width solid $color-border-default;
+        border-radius: 0;
+        padding-block: $spacing-lg;
+        padding-inline: $spacing-4xl;
+        color: $color-text-primary;
+
+        .p-menubar-button {
+          display: none;
+        }
+
+        @include header-mobile {
+          position: relative;
+          padding-inline: $spacing-xl;
+        }
+      }
+
+      .p-menubar-start,
+      .p-menubar-end {
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+
+        @include header-mobile {
+          position: static;
+        }
+      }
+
+      .p-menubar-root-list {
+        gap: 0;
+        padding-inline-start: $spacing-xl;
+
+        @include header-mobile {
+          display: none;
+        }
+      }
+
+      .p-menubar-item-link {
+        color: $color-text-primary;
+        padding: $spacing-md $spacing-xl;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .elm-header__actions,
+  .elm-header__drawer-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  .elm-header__actions {
+    @include header-mobile {
+      display: none;
+    }
+  }
+
+  .elm-header__menu {
+    display: none;
+
+    @include header-mobile {
+      display: inline-flex;
+    }
+  }
+
+  .elm-header__logo--desktop {
+    @include header-mobile {
+      display: none;
+    }
+  }
+
+  .elm-header__logo--mobile {
+    display: none;
+
+    @include header-mobile {
+      display: inline-flex;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .elm-header__drawer-nav {
+    display: block;
+    width: 100%;
+
+    ::ng-deep {
+
+      .p-panelmenu-header-link,
+      .p-panelmenu-item-link {
+        font-weight: $font-weight-medium;
+        color: $color-text-primary;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .elm-header__drawer-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: $spacing-xl;
+  }
+}

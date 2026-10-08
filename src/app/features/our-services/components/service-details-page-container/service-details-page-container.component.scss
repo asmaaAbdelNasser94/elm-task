@@ -1,0 +1,150 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin details-desktop {
+  @include respond-to-large {
+    @content;
+  }
+
+  @include respond-to-Xlarge {
+    @content;
+  }
+
+  @include respond-to-2Xlarge {
+    @content;
+  }
+}
+
+:host {
+  display: block;
+
+  elm-service-section {
+    ::ng-deep {
+      .elm-section-head {
+        gap: $spacing-xl;
+      }
+    }
+  }
+}
+
+.elm-service-details-page-container {
+  &__inner {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    padding: 0 $spacing-xl $spacing-5xl;
+    display: flex;
+    flex-direction: column;
+
+    @include details-desktop {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 26rem;
+      column-gap: $spacing-3xl;
+      align-items: start;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: $spacing-md;
+    background: $color-bg-brand-light;
+    box-shadow: 0 0 0 100vmax $color-bg-brand-light;
+    clip-path: inset(0 -100vmax);
+    padding-block: $spacing-5xl $spacing-5xl;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xl;
+
+    @include details-desktop {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: $spacing-4xl;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xl;
+    min-width: 0;
+
+    @include details-desktop {
+      flex: 1;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  &__title {
+    color: $color-text-primary;
+    font-size: $font-size-display-sm;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-display-sm;
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xl;
+  }
+
+  &__description {
+    max-width: 40rem;
+    font-weight: $font-weight-regular;
+    color: $color-text-primary;
+    font-size: $font-size-text-md;
+    line-height: $line-height-text-md;
+  }
+
+  &__sla {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xxs;
+    color: $color-primary;
+    font-size: $font-size-text-md;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-text-md;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__updated {
+    width: min(100%, 80rem);
+    margin: 0 auto;
+    padding: 0 $spacing-xl $spacing-xl;
+    background: $color-bg-brand-light;
+    box-shadow: 0 0 0 100vmax $color-bg-brand-light;
+    clip-path: inset(0 -100vmax);
+    color: $color-text-primary;
+    font-size: $font-size-text-sm;
+    line-height: $line-height-text-sm;
+    text-align: end;
+  }
+}

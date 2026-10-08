@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@mixin rate-desktop {
+  @include respond-to-large {
+    @content;
+  }
+
+  @include respond-to-Xlarge {
+    @content;
+  }
+
+  @include respond-to-2Xlarge {
+    @content;
+  }
+}
+
+:host {
+  display: block;
+  border-block-end: .0625rem solid $color-border-secondary;
+}
+
+.elm-page-rate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  padding: $spacing-xl;
+
+  @include rate-desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__prompt {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-3xl;
+  }
+
+  &__question {
+    font-size: $font-size-text-md;
+    line-height: $line-height-text-md;
+  }
+
+  &__result {
+    font-size: $font-size-text-sm;
+    line-height: $line-height-text-sm;
+  }
+}

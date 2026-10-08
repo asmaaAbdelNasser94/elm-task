@@ -1,0 +1,14 @@
+<section class="elm-home-hero" [attr.aria-label]="'_Home.hero.title' | translate">
+  <p-carousel class="h-100" [value]="slides" [numVisible]="1" [numScroll]="1" [showNavigators]="false">
+    <ng-template #item>
+      <div class="elm-home-hero__inner d-flex align-items-center h-100 w-100 mx-auto px-3 px-lg-0">
+        <div class="d-flex flex-column gap-4 w-100 text-start">
+          <h1 class="mb-0">{{ '_Home.hero.title' | translate }}</h1>
+          <p class="mb-0">{{ '_Home.hero.description' | translate }}</p>
+          <p-button class="elm-home-hero__action align-self-start mt-2" type="button" severity="secondary"
+            [label]="'_Home.hero.action' | translate" [ariaLabel]="'_Home.hero.action' | translate" />
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>

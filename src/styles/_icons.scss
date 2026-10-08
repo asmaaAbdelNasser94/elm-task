@@ -3,6 +3,33 @@
 // Drop `name.svg` in `public/icons`, then add `name` to this list.
 // Usage: class "elm name", or a PrimeNG icon value of "elm name".
 $icons: (
+  'search',
+  'lang',
+  'user',
+  'chevron-down',
+  'chevron-up',
+  'chevron-left',
+  'chevron-right',
+  'plus',
+  'user-group',
+  'give-blood',
+  'star',
+  'check',
+  'checkmark-circle',
+  'palm_swords',
+  'twitter',
+  'linkedin',
+  'instagram',
+  'eye',
+  'hand',
+  'clock',
+  'computer-phone-sync',
+  'money',
+  'card',
+  'phone',
+  'mail',
+  'link',
+  'link-square',
 );
 
 .elm {
@@ -10,12 +37,16 @@ $icons: (
   width: 1.25rem;
   height: 1.25rem;
   flex-shrink: 0;
-  background-color: currentColor;
+  background-color: $color-text-primary;
   -webkit-mask-size: contain !important;
   mask-size: contain !important;
 
   &.white-icon {
     background-color: $color-icon-white;
+  }
+
+  &.primary-icon {
+    background-color: $color-primary;
   }
 
   @each $name in $icons {

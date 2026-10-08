@@ -1,0 +1,9 @@
+<div class="elm-home-stat d-flex flex-column align-items-center">
+  <span class="elm-home-stat__icon d-flex align-items-center justify-content-center" aria-hidden="true">
+    <span [class]="'elm ' + icon()"></span>
+  </span>
+  <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+    <span #valueEl class="elm-home-stat__value">0</span>
+    <span class="elm-home-stat__label">{{ label() }}</span>
+  </div>
+</div>

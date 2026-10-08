@@ -1,0 +1,40 @@
+<div class="elm-section-head">
+  <div class="d-flex align-items-center justify-content-between gap-3">
+    <h2 class="elm-section-head__title">{{ '_Home.news.title' | translate }}</h2>
+    <p-button class="flex-shrink-0" type="button" severity="secondary" [outlined]="true"
+      [label]="'_Home.news.viewAll' | translate" [ariaLabel]="'_Home.news.viewAll' | translate" />
+  </div>
+  <p class="elm-section-head__description">{{ '_Home.news.description' | translate }}</p>
+</div>
+
+<div class="elm-home-news__carousel">
+  <p-carousel [value]="cards" [numVisible]="numVisible()" [numScroll]="1" [showNavigators]="true"
+    [showIndicators]="true">
+    <ng-template #item let-card>
+      <p-card styleClass="elm-news-card h-100 w-100">
+        <ng-template #header>
+          <img class="elm-news-card__image" [src]="card.image" [alt]="card.titleKey | translate" />
+        </ng-template>
+        <ng-template #title>
+          <span>{{ card.titleKey | translate }}</span>
+          <p>{{ card.descriptionKey | translate }}</p>
+        </ng-template>
+        <ng-template #footer>
+          <div class="d-flex">
+            <p-button type="button" [label]="card.actionKey | translate" [ariaLabel]="card.actionKey | translate" />
+          </div>
+        </ng-template>
+      </p-card>
+    </ng-template>
+    <ng-template #previousicon>
+      <span class="p-carousel-prev-icon" aria-hidden="true">
+        <span class="elm chevron-left"></span>
+      </span>
+    </ng-template>
+    <ng-template #nexticon>
+      <span class="p-carousel-next-icon" aria-hidden="true">
+        <span class="elm chevron-right"></span>
+      </span>
+    </ng-template>
+  </p-carousel>
+</div>

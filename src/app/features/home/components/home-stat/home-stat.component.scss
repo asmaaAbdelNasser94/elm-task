@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+:host {
+  display: block;
+}
+
+.elm-home-stat {
+  gap: $spacing-3xl;
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: $radius-full;
+    background: $color-bg-brand-light;
+
+    .elm {
+      width: 1.75rem;
+      height: 1.75rem;
+      background-color: $color-success-700;
+    }
+  }
+
+  &__value {
+    color: $color-primary-800;
+    font-size: $font-size-display-lg;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-display-lg;
+  }
+
+  &__label {
+    color: $color-neutral-800;
+    font-size: $font-size-text-md;
+    line-height: $line-height-text-md;
+    font-weight: $font-weight-regular;
+  }
+}

@@ -1,0 +1,57 @@
+<section class="elm-service-rate" [attr.aria-label]="'_Shared.serviceRate.action' | translate">
+  @if (collapsed) {
+  <div class="elm-service-rate__bar">
+    <div class="elm-service-rate__summary">
+      <p class="elm-service-rate__average mb-0">
+        {{ '_Shared.serviceRate.average' | translate }}
+        <strong>{{averageLabel}}</strong>
+      </p>
+      <p-rating [ngModel]="displayScore" [readonly]="true" [stars]="5" />
+      <p class="elm-service-rate__reviews mb-0">
+        {{ '_Shared.serviceRate.reviews' | translate: { count: reviewCount() } }}
+      </p>
+    </div>
+
+    <p-button type="button" [label]="'_Shared.serviceRate.action' | translate" (onClick)="open()" />
+  </div>
+  } @else {
+  <p-panel styleClass="elm-service-rate__panel" [toggleable]="true" [collapsed]="false" [showHeader]="false">
+    <div class="elm-service-rate__sheet">
+      <div class="elm-service-rate__top">
+        <div class="elm-service-rate__intro">
+          <h2 class="elm-service-rate__title mb-0">{{ '_Shared.serviceRate.title' | translate }}</h2>
+          <p class="elm-service-rate__notice mb-0">{{ '_Shared.serviceRate.notice' | translate }}</p>
+        </div>
+
+        <p-button class="elm-service-rate__close" type="button" [text]="true" severity="secondary" icon="pi pi-times"
+          iconPos="right" [label]="'_Shared.serviceRate.close' | translate" (onClick)="close($event)" />
+      </div>
+
+      <div class="elm-service-rate__form">
+        <div class="elm-service-rate__question">
+          <h3 class="elm-service-rate__question-title mb-0">{{ '_Shared.serviceRate.question' | translate }}</h3>
+          <p class="elm-service-rate__hint mb-0">{{ '_Shared.serviceRate.hint' | translate }}</p>
+          <p-rating [(ngModel)]="score" [stars]="5" />
+        </div>
+
+        <label class="elm-service-rate__feedback">
+          <span>{{ '_Shared.serviceRate.feedback' | translate }}</span>
+          <textarea pTextarea rows="4" [fluid]="true" [(ngModel)]="feedback"
+            [placeholder]="'_Shared.serviceRate.placeholder' | translate"></textarea>
+        </label>
+      </div>
+
+      <div class="elm-service-rate__footer">
+        <p class="elm-service-rate__more mb-0">
+          {{ '_Shared.serviceRate.more' | translate }}
+          <a href="#" (click)="$event.preventDefault()">{{ '_Shared.serviceRate.participation' | translate }}</a>
+          {{ '_Shared.serviceRate.and' | translate }}
+          <a href="#" (click)="$event.preventDefault()">{{ '_Shared.serviceRate.rules' | translate }}</a>
+        </p>
+
+        <p-button type="button" [label]="'_Shared.serviceRate.submit' | translate" />
+      </div>
+    </div>
+  </p-panel>
+  }
+</section>

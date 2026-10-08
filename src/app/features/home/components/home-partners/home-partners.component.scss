@@ -1,0 +1,110 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.elm-home-partners__carousel {
+  margin-top: $spacing-4xl;
+}
+
+:host ::ng-deep {
+  .p-carousel-content {
+    align-items: center;
+    gap: $spacing-xl;
+  }
+
+  .p-carousel-viewport {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .p-carousel-item {
+    display: flex;
+    flex: 0 0 50% !important;
+    width: 50%;
+    max-width: 50%;
+    padding-inline: $spacing-lg;
+
+    @include respond-to-small {
+      flex-basis: 33.333% !important;
+      width: 33.333%;
+      max-width: 33.333%;
+    }
+
+    @include respond-to-medium {
+      flex-basis: 25% !important;
+      width: 25%;
+      max-width: 25%;
+    }
+
+    @include respond-to-large {
+      flex-basis: 16.666% !important;
+      width: 16.666%;
+      max-width: 16.666%;
+    }
+
+    @include respond-to-Xlarge {
+      flex-basis: 10% !important;
+      width: 10%;
+      max-width: 10%;
+    }
+
+    @include respond-to-2Xlarge {
+      flex-basis: 10% !important;
+      width: 10%;
+      max-width: 10%;
+    }
+  }
+
+  .p-items-hidden .p-carousel-item {
+    visibility: visible;
+  }
+
+  .elm-partner {
+    width: 100%;
+    gap: $spacing-md;
+    padding: $spacing-xl;
+    background: $color-bg-surface;
+    border: $border-width solid $color-border-secondary;
+    border-radius: $radius-lg;
+
+    .elm {
+      width: 2rem;
+      height: 2rem;
+      background-color: $color-neutral-400;
+    }
+
+    &__label {
+      color: $color-text-secondary;
+      font-size: $font-size-text-xs;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-text-xs;
+      text-align: center;
+    }
+  }
+
+  .p-carousel-prev-button,
+  .p-carousel-next-button {
+    flex-shrink: 0;
+
+    .p-button.p-button-secondary {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
+      border-radius: $radius-md;
+      background: $color-bg-surface;
+      border: $border-width solid $color-border-secondary;
+
+      .elm {
+        background-color: $color-neutral-400;
+      }
+    }
+
+    &.p-disabled .p-button.p-button-secondary {
+      opacity: 1;
+    }
+  }
+}

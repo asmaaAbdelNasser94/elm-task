@@ -1,0 +1,8 @@
+<p-breadcrumb [model]="items()" styleClass="elm-breadcrumb">
+  <ng-template #item let-item>
+    <span class="p-breadcrumb-item-label">{{ item.label | translate }}</span>
+  </ng-template>
+  <ng-template #separator>
+    <span class="elm chevron-left" aria-hidden="true"></span>
+  </ng-template>
+</p-breadcrumb>
