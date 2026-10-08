@@ -37,6 +37,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) 26rem;
     column-gap: $spacing-5xl;
+    row-gap: $spacing-3xl;
     align-items: start;
   }
 
