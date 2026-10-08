@@ -45,8 +45,8 @@ $icons: (
 
   @each $name in $icons {
     &.#{$name} {
-      -webkit-mask: url('icons/#{$name}.svg') no-repeat 50% 50%;
-      mask: url('icons/#{$name}.svg') no-repeat 50% 50%;
+      -webkit-mask: url('../../public/icons/#{$name}.svg') no-repeat 50% 50%;
+      mask: url('../../public/icons/#{$name}.svg') no-repeat 50% 50%;
     }
   }
 }
