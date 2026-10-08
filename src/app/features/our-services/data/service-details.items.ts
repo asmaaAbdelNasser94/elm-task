@@ -38,8 +38,8 @@ export const serviceDetailFacts: ServiceDetailFact[] = [
 ];
 
 export const serviceDetailPayments: ServiceDetailMark[] = [
-  { src: '/images/mada.svg', altKey: '_Services.details.payments.mada' },
-  { src: '/images/stc-pay.svg', altKey: '_Services.details.payments.stc' },
+  { src: 'images/mada.svg', altKey: '_Services.details.payments.mada' },
+  { src: 'images/stc-pay.svg', altKey: '_Services.details.payments.stc' },
 ];
 
 export const serviceDetailContacts: ServiceDetailContact[] = [
@@ -58,10 +58,10 @@ export const serviceDetailContacts: ServiceDetailContact[] = [
 ];
 
 export const serviceDetailApps: ServiceDetailApps = {
-  featured: { src: '/images/app-store.svg', altKey: '_Services.details.apps.appStore' },
+  featured: { src: 'images/app-store.svg', altKey: '_Services.details.apps.appStore' },
   side: [
-    { src: '/images/google-play.svg', altKey: '_Services.details.apps.googlePlay' },
-    { src: '/images/app-gallery.svg', altKey: '_Services.details.apps.appGallery' },
+    { src: 'images/google-play.svg', altKey: '_Services.details.apps.googlePlay' },
+    { src: 'images/app-gallery.svg', altKey: '_Services.details.apps.appGallery' },
   ],
 };
 

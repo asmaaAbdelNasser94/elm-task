@@ -29,7 +29,7 @@ export class HomeNewsComponent {
 
   protected readonly cards: NewsCard[] = Array.from({ length: 3 }, (_, id) => ({
     id,
-    image: '/images/saudi-flag.png',
+    image: 'images/saudi-flag.png',
     titleKey: '_Home.news.card.title',
     descriptionKey: '_Home.news.card.description',
     actionKey: '_Home.news.card.action',
