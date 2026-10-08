@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-CgDbEn7I.js`).then(o=>o.HomePageComponent)}];export{t as homeRoutes};

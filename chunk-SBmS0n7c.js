@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-B3Ni7nj9.js`).then(e=>e.LayoutComponent),children:[{path:`home`,loadChildren:()=>import(`./chunk-Y7M1qxug.js`).then(e=>e.homeRoutes)},{path:`services`,loadChildren:()=>import(`./chunk-BMTiQH89.js`).then(e=>e.eServicesRoutes)},{path:``,redirectTo:`home`,pathMatch:`full`}]}];export{t as featuresRoutes};
