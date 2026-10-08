@@ -1,0 +1,245 @@
+{
+  "_General": {
+    "language": "Language",
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "_Layout": {
+    "header": {
+      "label": "Page header",
+      "home": "Home",
+      "nav": "Main navigation",
+      "search": "Search",
+      "login": "Log in",
+      "menu": "Menu",
+      "language": {
+        "ar": "العربية",
+        "en": "English"
+      },
+      "menuItems": {
+        "1": "Tab 1",
+        "2": "Tab 2",
+        "3": "Tab 3",
+        "4": "Tab 4",
+        "5": "Tab 5",
+        "6": "Tab 6",
+        "7": "Tab 7"
+      }
+    },
+    "footer": {
+      "summary": {
+        "title": "Overview",
+        "about": "About [portal name]",
+        "privacy": "Privacy and terms of use",
+        "howTo": "How to use [portal name]",
+        "news": "News and events",
+        "sla": "Service level agreement statistics"
+      },
+      "important": {
+        "title": "Important links",
+        "national": "National service portal",
+        "openData": "Open government data",
+        "strategy": "National data and AI strategy",
+        "openPortal": "Open data portal",
+        "participation": "E-participation portal"
+      },
+      "support": {
+        "title": "Contact and support",
+        "customers": "Customer center",
+        "contact": "Contact us",
+        "share": "Share with us",
+        "complaint": "Submit a complaint",
+        "report": "Report corruption"
+      },
+      "social": {
+        "title": "Follow us",
+        "x": "X",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram"
+      },
+      "accessibility": {
+        "title": "Accessibility tools",
+        "sign": "Sign language",
+        "zoom": "Zoom text",
+        "contrast": "Color contrast"
+      },
+      "sitemap": "Sitemap",
+      "rss": "RSS",
+      "mobileApp": "Mobile app",
+      "logoAlt": "Elm",
+      "registeredAlt": "Registered with the Digital Government Authority",
+      "copyright": "All rights reserved for the Digital Government Authority © 2024",
+      "developedBy": "Developed and maintained by [enter entity name]",
+      "modified": "Last modified: 04/12/2020"
+    }
+  },
+  "_Home": {
+    "title": "Home",
+    "hero": {
+      "title": "Main section",
+      "description": "Here you can add a short description of the portal’s purpose, followed by a call-to-action button and an image or illustration on the left.",
+      "action": "Primary action"
+    },
+    "about": {
+      "title": "About us section",
+      "description": "Here you can add a short description of the portal’s purpose, followed by a call-to-action button or an image or illustration on the left.",
+      "action": "Secondary action",
+      "person": "Person"
+    },
+    "services": {
+      "title": "Services section",
+      "description": "Here you can add a short description of the portal’s purpose, followed by a call-to-action button and an image or illustration on the left.",
+      "viewAll": "View all"
+    },
+    "news": {
+      "title": "News and articles section",
+      "description": "Here you can add a short description of the portal’s purpose.",
+      "viewAll": "View all",
+      "card": {
+        "title": "News card title in two lines",
+        "description": "Here you can include a brief description of the title in four lines. Here you can include a brief description of the title in four lines.",
+        "action": "Read more"
+      }
+    },
+    "partners": {
+      "title": "Partners section",
+      "logo": "Platform logo"
+    },
+    "lastUpdated": "Last modified: 04/12/2020, 4:13 PM Saudi time - 04/12/2020"
+  },
+  "_Services": {
+    "card": {
+      "title": "Card title",
+      "description": "Extra text for the card content",
+      "tag": "Tag",
+      "primaryAction": "Action",
+      "secondaryAction": "Secondary action"
+    },
+    "details": {
+      "title": "Building permit",
+      "related": {
+        "title": "Related services",
+        "viewAll": "View all"
+      },
+      "lastUpdated": "Last modified: 04/12/2020 - 4:13 PM Saudi time",
+      "description": "An example service description for buying a plot of land to build your home. This requires documenting the sale in notary offices or notary services to register the property in your name.",
+      "tags": {
+        "entity": "Entity",
+        "journey": "Life journey",
+        "platform": "Platform"
+      },
+      "sla": "Service level agreement",
+      "start": "Start service",
+      "facts": {
+        "audience": "Target audience",
+        "audienceValue": "Citizens, GCC nationals, investors, and foreigners",
+        "duration": "Service duration",
+        "durationValue": "5.0 days",
+        "channels": "Service channels",
+        "channelsValue": "Web and mobile app",
+        "cost": "Service cost",
+        "costValue": "Free",
+        "payment": "Payment channels"
+      },
+      "payments": {
+        "stc": "STC Pay",
+        "mada": "mada"
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "phone": "Phone",
+        "email": "Email",
+        "guide": "Download user guide"
+      },
+      "apps": {
+        "title": "Mobile apps",
+        "appStore": "App Store",
+        "googlePlay": "Google Play",
+        "appGallery": "AppGallery"
+      },
+      "tabs": {
+        "steps": "Steps",
+        "terms": "Terms of use",
+        "documents": "Required documents"
+      },
+      "terms": {
+        "1": "By using this service you agree to its terms and conditions.",
+        "2": "You must enter correct and up-to-date information when submitting the request.",
+        "3": "The entity may reject the request if the requirements or attachments are incomplete."
+      },
+      "documents": {
+        "1": "A copy of the national ID.",
+        "2": "A copy of the title deed.",
+        "3": "The approved building plan.",
+        "4": "Authorization for the engineering office."
+      },
+      "steps": {
+        "1": "Sign in to the national unified registration portal through the Balady platform.",
+        "2": "Choose building permit services, then issue the building permit.",
+        "3": "Select the required municipality licensing services.",
+        "4": "Choose the engineering office, then enter the building survey number and year, and attach a copy of the deed.",
+        "5": "Submit the request to the selected engineering office, then complete the information and attachments and send them to the municipality.",
+        "6": "The municipality verifies the request data, attachments, and approvals.",
+        "7": "The request is approved and a payment invoice is issued. Pay the fees and print the permit."
+      }
+    }
+  },
+  "_Shared": {
+    "serviceRate": {
+      "average": "This service is rated on average",
+      "reviews": "{{count}} reviews",
+      "action": "Rate this service",
+      "title": "Tell us what you think of this service",
+      "notice": "Please don't include personal or financial information. Your review will be submitted and recorded to improve services.",
+      "question": "How would you rate this service?",
+      "hint": "Rate your experience from (1) poor to (5) excellent",
+      "feedback": "Feedback",
+      "placeholder": "Entered text",
+      "more": "For more information you may review",
+      "participation": "e-participation statement",
+      "and": "and",
+      "rules": "rules of engagement",
+      "submit": "Submit",
+      "close": "Close"
+    },
+    "pageRate": {
+      "question": "Was this page helpful?",
+      "yes": "Yes",
+      "no": "No",
+      "result": "{{percent}}% of users said yes out of {{count}} comments"
+    }
+  },
+  "_Actions": {
+    "title": "Actions"
+  },
+  "_StartService": {
+    "title": "Start service",
+    "form": {
+      "title": "Text fields",
+      "description": "When using forms, the standard fields are text fields, usually for entering short text. Field states are default, active, focused, error, hint, and disabled.",
+      "requiredNote": "Required information",
+      "requiredLabel": "Mandatory text input",
+      "optionalLabel": "Optional text input",
+      "placeholder": "Hint text",
+      "addon": "Text",
+      "hint": "Helper text",
+      "next": "Next",
+      "send": "Send",
+      "back": "Back"
+    },
+    "steps": {
+      "1": {
+        "title": "First step",
+        "description": "Step description"
+      },
+      "2": {
+        "title": "Second step",
+        "description": "Step description"
+      },
+      "3": {
+        "title": "Third step",
+        "description": "Step description"
+      }
+    }
+  }
+}

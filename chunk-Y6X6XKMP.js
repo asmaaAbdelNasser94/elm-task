@@ -1,0 +1,1 @@
+import"./chunk-LSIHGRHO.js";var t=[{path:"",loadComponent:()=>import("./chunk-4OWTOIFD.js").then(e=>e.LayoutComponent),children:[{path:"home",loadChildren:()=>import("./chunk-7QACJXNG.js").then(e=>e.homeRoutes)},{path:"services",loadChildren:()=>import("./chunk-E3GQMITR.js").then(e=>e.eServicesRoutes)},{path:"",redirectTo:"home",pathMatch:"full"}]}];export{t as featuresRoutes};
